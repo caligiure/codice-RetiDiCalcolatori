@@ -27,7 +27,6 @@ public class TimeServer {
                 socket.send(packet);
                 n++;
             }
-            socket.close();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
