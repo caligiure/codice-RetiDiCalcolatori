@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="First version of Time Server">
-      <change afterPath="$PROJECT_DIR$/src/ese3_datagram/TimeClientMod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ese3_datagram/TimeServerMod.java" afterDir="false" />
+    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="Added TimeServerMod (not fully functional)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ese3_datagram/ReadMe.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese3_datagram/ReadMe.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ese3_datagram/TimeServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese3_datagram/TimeServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ese3_datagram/TimeServerMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese3_datagram/TimeServerMod.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +24,20 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;caligiure&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="430db845-8037-4fc6-9a7a-c9ea9f829b7f" />
+        <option name="url" value="https://github.com/caligiure/codice-RetiDiCalcolatori.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -42,27 +53,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.TimeClient.executor": "Run",
-    "Application.TimeClientMod.executor": "Run",
-    "Application.TimeServer.executor": "Run",
-    "Application.TimeServerMod.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Uni/RetiDiCalcolatori/codice-RetiDiCalcolatori",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.TimeClient.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TimeClientMod.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TimeServer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TimeServerMod.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Uni/RetiDiCalcolatori/codice-RetiDiCalcolatori&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.TimeClient">
+}</component>
+  <component name="RunManager" selected="Application.TimeClientMod">
     <configuration name="TimeClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ese3_datagram.TimeClient" />
       <module name="codice-RetiDiCalcolatori" />
@@ -117,10 +128,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TimeClient" />
-        <item itemvalue="Application.TimeServer" />
         <item itemvalue="Application.TimeClientMod" />
         <item itemvalue="Application.TimeServerMod" />
+        <item itemvalue="Application.TimeClient" />
+        <item itemvalue="Application.TimeServer" />
       </list>
     </recent_temporary>
   </component>
@@ -137,7 +148,8 @@
       <workItem from="1711487350325" duration="45000" />
       <workItem from="1711487412643" duration="7000" />
       <workItem from="1711487603359" duration="149000" />
-      <workItem from="1711487858382" duration="4453000" />
+      <workItem from="1711487858382" duration="4671000" />
+      <workItem from="1711622568042" duration="1415000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit">
       <option name="closed" value="true" />
@@ -179,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711490380184</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added TimeServerMod (not fully functional)">
+      <option name="closed" value="true" />
+      <created>1711492469040</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1711492469040</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +208,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Second commit" />
     <MESSAGE value="First version of Time Server" />
-    <option name="LAST_COMMIT_MESSAGE" value="First version of Time Server" />
+    <MESSAGE value="Added TimeServerMod (not fully functional)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added TimeServerMod (not fully functional)" />
   </component>
 </project>

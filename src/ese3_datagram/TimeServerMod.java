@@ -34,9 +34,6 @@ public class TimeServerMod extends Thread {
                 packet = new DatagramPacket(buf, buf.length, address, port);
                 socket.send(packet);
                 n++;
-
-                // debug
-                System.out.println("Time in " + request + "> " + myCalendar.get(Calendar.HOUR) + ":" + myCalendar.get(Calendar.MINUTE));
             }
         } catch (IOException e) {
             e.printStackTrace();
