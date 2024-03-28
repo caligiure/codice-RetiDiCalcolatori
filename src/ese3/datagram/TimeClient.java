@@ -1,4 +1,4 @@
-package ese3_datagram;
+package ese3.datagram;
 
 import java.io.IOException;
 import java.net.DatagramPacket;

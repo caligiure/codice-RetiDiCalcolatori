@@ -1,9 +1,10 @@
-package ese3_datagram;
+package ese3.datagram;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.net.SocketException;
 import java.util.Date;
 
 public class TimeServer {
@@ -27,6 +28,8 @@ public class TimeServer {
                 socket.send(packet);
                 n++;
             }
+        } catch (SocketException e) {
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

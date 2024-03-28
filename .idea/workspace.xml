@@ -75,11 +75,11 @@
 }</component>
   <component name="RunManager" selected="Application.TimeClientMod">
     <configuration name="TimeClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ese3_datagram.TimeClient" />
+      <option name="MAIN_CLASS_NAME" value="ese3.datagram.TimeClient" />
       <module name="codice-RetiDiCalcolatori" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ese3_datagram.*" />
+          <option name="PATTERN" value="ese3.datagram.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -88,11 +88,11 @@
       </method>
     </configuration>
     <configuration name="TimeClientMod" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ese3_datagram.TimeClientMod" />
+      <option name="MAIN_CLASS_NAME" value="ese3.datagram.TimeClientMod" />
       <module name="codice-RetiDiCalcolatori" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ese3_datagram.*" />
+          <option name="PATTERN" value="ese3.datagram.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -101,11 +101,11 @@
       </method>
     </configuration>
     <configuration name="TimeServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ese3_datagram.TimeServer" />
+      <option name="MAIN_CLASS_NAME" value="ese3.datagram.TimeServer" />
       <module name="codice-RetiDiCalcolatori" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ese3_datagram.*" />
+          <option name="PATTERN" value="ese3.datagram.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -114,11 +114,11 @@
       </method>
     </configuration>
     <configuration name="TimeServerMod" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ese3_datagram.TimeServerMod" />
+      <option name="MAIN_CLASS_NAME" value="ese3.datagram.TimeServerMod" />
       <module name="codice-RetiDiCalcolatori" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ese3_datagram.*" />
+          <option name="PATTERN" value="ese3.datagram.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
