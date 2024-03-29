@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="Added class ese3\testURL">
-      <change afterPath="$PROJECT_DIR$/src/ese3/testURL/URLConnectionTest.java" afterDir="false" />
+    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="Added class ese3\URLConnectionTest">
+      <change afterPath="$PROJECT_DIR$/src/ese3/multicast/MulticastTimeClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ese3/multicast/MulticastTimeServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ese3/multicast/URLConnectionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ese3/multicast/URLTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +58,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.MulticastTimeClient.executor": "Run",
     "Application.TimeClient.executor": "Run",
     "Application.TimeClientMod.executor": "Run",
     "Application.TimeServer.executor": "Run",
@@ -66,7 +70,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Uni/RetiDiCalcolatori/codice-RetiDiCalcolatori",
+    "last_opened_file_path": "C:/Uni/RetiDiCalcolatori/codice-RetiDiCalcolatori/src/ese3/multicast",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -76,6 +80,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Uni\RetiDiCalcolatori\codice-RetiDiCalcolatori\src\ese3\multicast" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="ese3" />
     </key>
@@ -156,7 +163,9 @@
       <workItem from="1711487412643" duration="7000" />
       <workItem from="1711487603359" duration="149000" />
       <workItem from="1711487858382" duration="4671000" />
-      <workItem from="1711622568042" duration="4804000" />
+      <workItem from="1711622568042" duration="5486000" />
+      <workItem from="1711643098928" duration="595000" />
+      <workItem from="1711706909655" duration="2457000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit">
       <option name="closed" value="true" />
@@ -230,7 +239,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711628110660</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added class ese3\URLConnectionTest">
+      <option name="closed" value="true" />
+      <created>1711636629686</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1711636629686</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,6 +260,7 @@
     <MESSAGE value="Added ese3 package" />
     <MESSAGE value="Moved datagram into ese3 package" />
     <MESSAGE value="Added class ese3\testURL" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added class ese3\testURL" />
+    <MESSAGE value="Added class ese3\URLConnectionTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added class ese3\URLConnectionTest" />
   </component>
 </project>
