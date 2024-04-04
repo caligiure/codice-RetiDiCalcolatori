@@ -11,10 +11,8 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 public class BetClient {
-    private int serverPort;
-    private int myPort;
-    private InetAddress groupAddress;
-    private InetAddress serverAddress;
+    private final int serverPort, myPort;
+    private final InetAddress serverAddress, groupAddress;
     private Socket s;
 
     public BetClient(InetAddress gAddress, InetAddress server, int sPort, int mPort) {
@@ -25,7 +23,7 @@ public class BetClient {
         try {
             s = new Socket(serverAddress, serverPort);
         } catch (IOException ioe) {
-            System.out.println(ioe);
+            ioe.printStackTrace();
         }
     } // costruttore
 
@@ -69,13 +67,11 @@ public class BetClient {
             InetAddress server = InetAddress.getByName("127.0.0.1");
             BetClient client = new BetClient(group, server, serverPort, myPort);
             int cavallo = ((int) (Math.random() * 12)) + 1; // cavallo su cui
-            // scommette, tra 1
-            // e 12
+            // scommette, tra 1 e 12
             int cifra = ((int) (Math.random() * 100)) + 1; // cifra su cui
-            // scommette, tra 1
-            // e 100 euro
+            // scommette, tra 1 e 100 euro
             System.out.format("Invio scomessa sul cavallo %s di %s euro%n", cavallo, cifra);
-            if (client.placeBet(cavallo, cifra))
+            if (client.placeBet(cavallo, cifra)) // se la scommessa è stata accettata
                 client.riceviElencoVincitori();
         } catch (UnknownHostException uhe) {
             System.out.println(uhe);
