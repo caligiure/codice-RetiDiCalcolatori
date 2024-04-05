@@ -10,14 +10,14 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
-public class BetServer_v2 {
+public class BetServer_v1b {
     private final HashMap<Integer, Scommessa> scommesse;
     private final Calendar limite;
     private final BetAccepter accepter;
     private BetDenyer denyer;
     private final int port;
 
-    public BetServer_v2(int port, Calendar deadline) {
+    public BetServer_v1b(int port, Calendar deadline) {
         scommesse = new HashMap<Integer, Scommessa>();
         limite = deadline;
         this.port = port;
@@ -171,7 +171,7 @@ public class BetServer_v2 {
         try {
             Calendar deadline = Calendar.getInstance();
             deadline.add(Calendar.SECOND, 30); //la deadline è fissata tra un minuto
-            BetServer_v2 server = new BetServer_v2(serverPort, deadline);
+            BetServer_v1b server = new BetServer_v1b(serverPort, deadline);
             System.out.println("Scommesse aperte");
             server.accettaScommesse(); // accetta fino alla scadenza della deadline
             server.rifiutaScommesse(); // dopo la deadline ogni scommessa viene rifiutata
