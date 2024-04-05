@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ese4/scommesseCavalli/BetServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ese4/scommesseCavalli/Scommessa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ese4/scommesseCavalli/BetServerThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,6 +68,7 @@
     "Application.URLTest.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
@@ -89,7 +90,7 @@
       <recent name="ese3" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BetServer">
+  <component name="RunManager" selected="Application.BetClient">
     <configuration name="BetClient" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ese4.scommesseCavalli.BetClient" />
       <module name="codice-RetiDiCalcolatori" />
@@ -141,7 +142,8 @@
       <workItem from="1711793086523" duration="595000" />
       <workItem from="1712134108513" duration="43000" />
       <workItem from="1712244532306" duration="4801000" />
-      <workItem from="1712305329557" duration="1204000" />
+      <workItem from="1712305329557" duration="1332000" />
+      <workItem from="1712311485009" duration="1242000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit">
       <option name="closed" value="true" />
@@ -247,7 +249,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712250184379</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added classes BetServer and Scommessa">
+      <option name="closed" value="true" />
+      <created>1712308979709</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1712308979709</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,6 +274,7 @@
     <MESSAGE value="Added package ese3.multicast" />
     <MESSAGE value="Added class betClient in package scommesseCavalli" />
     <MESSAGE value="Modified BetClient" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified BetClient" />
+    <MESSAGE value="Added classes BetServer and Scommessa" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added classes BetServer and Scommessa" />
   </component>
 </project>
