@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="Added class BetServer_v2" />
+    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="Added package scommesseCavalli_obj" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,7 +69,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Uni/RetiDiCalcolatori/codice-RetiDiCalcolatori",
+    "last_opened_file_path": "C:/Uni/RetiDiCalcolatori/codice-RetiDiCalcolatori/src/ese4/scommesseCavalli_obj",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -140,7 +140,7 @@
       <workItem from="1712134108513" duration="43000" />
       <workItem from="1712244532306" duration="4801000" />
       <workItem from="1712305329557" duration="1332000" />
-      <workItem from="1712311485009" duration="1835000" />
+      <workItem from="1712311485009" duration="2173000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit">
       <option name="closed" value="true" />
@@ -262,7 +262,23 @@
       <option name="project" value="LOCAL" />
       <updated>1712313255816</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Renamed class BetServer_v2 to BetServer_v1b">
+      <option name="closed" value="true" />
+      <created>1712313547702</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1712313547702</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Added package scommesseCavalli_obj">
+      <option name="closed" value="true" />
+      <created>1712313654485</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1712313654485</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,6 +297,8 @@
     <MESSAGE value="Modified BetClient" />
     <MESSAGE value="Added classes BetServer and Scommessa" />
     <MESSAGE value="Added class BetServer_v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added class BetServer_v2" />
+    <MESSAGE value="Renamed class BetServer_v2 to BetServer_v1b" />
+    <MESSAGE value="Added package scommesseCavalli_obj" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added package scommesseCavalli_obj" />
   </component>
 </project>
