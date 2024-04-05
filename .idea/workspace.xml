@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="Added package ese3.multicast">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_03_2024_22_19_[Changes]/shelved.patch" beforeDir="false" />
+    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ese4/scommesseCavalli/BetServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ese4/scommesseCavalli/Scommessa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +56,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.BetClient.executor": "Run",
+    "Application.BetServer.executor": "Run",
     "Application.MulticastTimeClient.executor": "Run",
     "Application.MulticastTimeServer.executor": "Run",
     "Application.TimeClient.executor": "Run",
@@ -68,12 +71,13 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Uni/IngDelSoftware/codice_IngDelSoftware",
+    "last_opened_file_path": "C:/Uni/RetiDiCalcolatori/codice-RetiDiCalcolatori",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -85,13 +89,13 @@
       <recent name="ese3" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TimeClient">
-    <configuration name="TimeClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ese3.datagram.TimeClient" />
+  <component name="RunManager" selected="Application.BetServer">
+    <configuration name="BetClient" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ese4.scommesseCavalli.BetClient" />
       <module name="codice-RetiDiCalcolatori" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ese3.datagram.*" />
+          <option name="PATTERN" value="ese4.scommesseCavalli.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -99,12 +103,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TimeClientMod" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ese3.datagram.TimeClientMod" />
+    <configuration name="BetServer" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ese4.scommesseCavalli.BetServer" />
       <module name="codice-RetiDiCalcolatori" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ese3.datagram.*" />
+          <option name="PATTERN" value="ese4.scommesseCavalli.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -112,40 +116,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TimeServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ese3.datagram.TimeServer" />
-      <module name="codice-RetiDiCalcolatori" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ese3.datagram.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TimeServerMod" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ese3.datagram.TimeServerMod" />
-      <module name="codice-RetiDiCalcolatori" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ese3.datagram.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.TimeClientMod" />
-        <item itemvalue="Application.TimeServerMod" />
-        <item itemvalue="Application.TimeClient" />
-        <item itemvalue="Application.TimeServer" />
-      </list>
-    </recent_temporary>
+    <list>
+      <item itemvalue="Application.BetClient" />
+      <item itemvalue="Application.BetServer" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -166,6 +140,8 @@
       <workItem from="1711706909655" duration="3424000" />
       <workItem from="1711793086523" duration="595000" />
       <workItem from="1712134108513" duration="43000" />
+      <workItem from="1712244532306" duration="4801000" />
+      <workItem from="1712305329557" duration="1204000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit">
       <option name="closed" value="true" />
@@ -255,7 +231,23 @@
       <option name="project" value="LOCAL" />
       <updated>1711714559926</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added class betClient in package scommesseCavalli">
+      <option name="closed" value="true" />
+      <created>1712246622413</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1712246622413</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Modified BetClient">
+      <option name="closed" value="true" />
+      <created>1712250184379</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1712250184379</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,6 +262,8 @@
     <MESSAGE value="Added class ese3\testURL" />
     <MESSAGE value="Added class ese3\URLConnectionTest" />
     <MESSAGE value="Added package ese3.multicast" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added package ese3.multicast" />
+    <MESSAGE value="Added class betClient in package scommesseCavalli" />
+    <MESSAGE value="Modified BetClient" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified BetClient" />
   </component>
 </project>
