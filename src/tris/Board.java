@@ -53,6 +53,8 @@ public class Board implements Serializable {
             throw new IllegalArgumentException("Illegal y argument");
         if(p!=1 && p!=2)
             throw new IllegalArgumentException("Illegal p argument");
+        if(mat[x][y]!=0)
+            throw new IllegalArgumentException("This box is already marked");
         mat[x][y]=p;
     }
 
