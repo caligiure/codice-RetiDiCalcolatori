@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="Added package scommesseCavalli_obj" />
+    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="Added class BetServerV2">
+      <change afterPath="$PROJECT_DIR$/src/ese4/tris/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ese4/tris/GameManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ese4/tris/Move.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ese4/tris/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ese4/tris/TrisServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,6 +62,7 @@
     "Application.BetClient.executor": "Run",
     "Application.BetServer.executor": "Run",
     "Application.BetServer_v2.executor": "Run",
+    "Application.Board.executor": "Run",
     "Application.MulticastTimeClient.executor": "Run",
     "Application.MulticastTimeServer.executor": "Run",
     "Application.TimeClient.executor": "Run",
@@ -69,7 +77,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Uni/RetiDiCalcolatori/codice-RetiDiCalcolatori/src/ese4/scommesseCavalli_obj",
+    "last_opened_file_path": "C:/Uni/RetiDiCalcolatori/codice-RetiDiCalcolatori/src/ese4/scommesseCavalli",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -81,13 +89,15 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Uni\RetiDiCalcolatori\codice-RetiDiCalcolatori\src\ese4\scommesseCavalli" />
+      <recent name="C:\Uni\RetiDiCalcolatori\codice-RetiDiCalcolatori\src\ese4\scommesseCavalli_obj" />
       <recent name="C:\Uni\RetiDiCalcolatori\codice-RetiDiCalcolatori\src\ese3\multicast" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="ese3" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BetClient">
+  <component name="RunManager" selected="Application.Board">
     <configuration name="BetClient" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ese4.scommesseCavalli.BetClient" />
       <module name="codice-RetiDiCalcolatori" />
@@ -114,10 +124,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Board" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ese4.tris.Board" />
+      <module name="codice-RetiDiCalcolatori" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ese4.tris.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.BetClient" />
       <item itemvalue="Application.BetServer" />
+      <item itemvalue="Application.Board" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Board" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -140,7 +169,8 @@
       <workItem from="1712134108513" duration="43000" />
       <workItem from="1712244532306" duration="4801000" />
       <workItem from="1712305329557" duration="1332000" />
-      <workItem from="1712311485009" duration="2173000" />
+      <workItem from="1712311485009" duration="4092000" />
+      <workItem from="1712395051970" duration="16021000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit">
       <option name="closed" value="true" />
@@ -278,7 +308,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712313654485</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added class BetServerV2">
+      <option name="closed" value="true" />
+      <created>1712313738165</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1712313738165</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,6 +337,7 @@
     <MESSAGE value="Added class BetServer_v2" />
     <MESSAGE value="Renamed class BetServer_v2 to BetServer_v1b" />
     <MESSAGE value="Added package scommesseCavalli_obj" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added package scommesseCavalli_obj" />
+    <MESSAGE value="Added class BetServerV2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added class BetServerV2" />
   </component>
 </project>
