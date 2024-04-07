@@ -11,6 +11,7 @@ public class Board implements Serializable {
         n=3;
         m=3;
         mat = new int[n][m];
+       reset();
     }
 
     @SuppressWarnings("unused")
@@ -18,6 +19,15 @@ public class Board implements Serializable {
         this.n = n;
         this.m = m;
         mat = new int[n][m];
+        reset();
+    }
+
+    public void reset() {
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                mat[i][j] = -1;
+            }
+        }
     }
 
     public int getN() {
@@ -33,10 +43,10 @@ public class Board implements Serializable {
         StringBuilder sb = new StringBuilder();
         for(int i=0; i<n; i++){
             for(int j=0; j<m; j++){
-                if(mat[i][j]==1)
-                    sb.append("X").append(" ");
-                else if(mat[i][j]==2)
+                if(mat[i][j]==0)
                     sb.append("O").append(" ");
+                else if(mat[i][j]==1)
+                    sb.append("X").append(" ");
                 else
                     sb.append("_").append(" ");
             }
@@ -51,9 +61,9 @@ public class Board implements Serializable {
             throw new IllegalArgumentException("Illegal x argument");
         if(y<0 ||y>=m)
             throw new IllegalArgumentException("Illegal y argument");
-        if(p!=1 && p!=2)
+        if(p!=0 && p!=1)
             throw new IllegalArgumentException("Illegal p argument");
-        if(mat[x][y]!=0)
+        if(mat[x][y]==0 || mat[x][y]==1)
             throw new IllegalArgumentException("This box is already marked");
         mat[x][y]=p;
     }
@@ -93,6 +103,17 @@ public class Board implements Serializable {
         return false;
     }
 
+    public boolean checkEndgame() {
+        int c = 0;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(mat[i][j]==0 || mat[i][j]==1)
+                    c++;
+            }
+        }
+        return c == n*m;
+    }
+
     public static void main(String[] args){
         Board b = new Board();
         b.makeMove(1,0,0);
@@ -100,15 +121,26 @@ public class Board implements Serializable {
         b.makeMove(1,2,2);
         System.out.println(b);
         System.out.println(b.checkWin());
-        b.makeMove(1,0,0);
-        b.makeMove(2,1,1);
-        b.makeMove(1,2,2);
+        b.reset();
+        b.makeMove(1,0,2);
+        b.makeMove(0,1,1);
+        b.makeMove(1,2,0);
         System.out.println(b);
         System.out.println(b.checkWin());
+        b.reset();
         b.makeMove(1,2,0);
         b.makeMove(1,2,1);
         b.makeMove(1,2,2);
         System.out.println(b);
         System.out.println(b.checkWin());
+        b.reset();
+        for(int i=0;i<b.getN();i++){
+            for(int j=0;j<b.getM();j++){
+                b.makeMove((int) Math.round(Math.random()), i, j);
+            }
+        }
+        System.out.println(b);
+        System.out.println(b.checkWin());
+        System.out.println(b.checkEndgame());
     }
 }

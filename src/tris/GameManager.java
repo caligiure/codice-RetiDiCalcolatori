@@ -10,65 +10,52 @@ public class GameManager extends Thread {
     private final ObjectOutputStream[] out;
     private final Board board;
 
-    public GameManager(Player p1, Player p2) {
-        p = new Player[3];
+    public GameManager(Player p0, Player p1) {
+        p = new Player[2];
+        p[0] = p0;
         p[1] = p1;
-        p[2] = p2;
         board = new Board();
         in = new ObjectInputStream[3];
         out =new ObjectOutputStream[3];
         try{
+            in[0] = new ObjectInputStream(p0.getSock().getInputStream());
             in[1] = new ObjectInputStream(p1.getSock().getInputStream());
-            in[2] = new ObjectInputStream(p2.getSock().getInputStream());
+            out[0] = new ObjectOutputStream(p0.getSock().getOutputStream());
             out[1] = new ObjectOutputStream(p1.getSock().getOutputStream());
-            out[2] = new ObjectOutputStream(p2.getSock().getOutputStream());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
+    } // constructor
 
     public void run() {
         try {
-            System.out.println("Starting game: "+p[1]+" vs "+p[2]);
-            out[1].writeObject("START");
-            out[2].writeObject("START");
+            System.out.println("Starting game: "+p[0]+" vs "+p[1]);
             boolean nextRound = true;
-            boolean round1 = true; // PLAYER 1 gioca sempre per primo
+            int round = (int) Math.round(Math.random());
             while(nextRound) {
-                for(int i=1; i<=2; i++){
+                for(int i=0; i<2; i++){
                     out[i].writeObject("READY");
                     out[i].writeObject(board);
                 }
-                if(round1){
-                    out[2].writeObject("WAIT");
-                    boolean win1 = move(1);
-                    if(win1){
-                        winner(1);
-                        loser(2);
-                        nextRound=false;
-                    }
-                    // CONTROLLA SE LA SCACCHIERA E' PIENA
-                    if(!win1){
-                        move(2);
-                        boolean win2 = board.checkWin();
-                        if(win2){
-                            winner(2);
-                            loser(1);
-                            nextRound=false;
-                        }
-                    }
-                } // round1
-                else {
-
+                out[(round+1)%2].writeObject("WAIT");
+                move(round);
+                if (board.checkWin()) {
+                    winner(round);
+                    loser((round + 1) % 2);
+                    nextRound = false;
                 }
-                round1 = !round1;
-            }
-        } catch (IOException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
+                if (board.checkEndgame()) { // CONTROLLA SE LA SCACCHIERA E' PIENA
+                    endgame();
+                    nextRound = false;
+                }
+                round = (round + 1) % 2;
+            } // while
+        } catch (IOException | ClassNotFoundException ex) {
+            throw new RuntimeException(ex);
         }
-    }
+    } // run
 
-    private boolean move(int i) throws IOException, ClassNotFoundException {
+    private void move(int i) throws IOException, ClassNotFoundException {
         out[i].writeObject("MOVE");
         boolean done = false;
         while(!done){
@@ -82,18 +69,22 @@ public class GameManager extends Thread {
                 done=false;
             }
         } // while
-        return board.checkWin();
     } // move
 
     private void winner(int i) throws IOException {
-        out[i].writeObject("ENDGAME");
         out[i].writeObject("WINNER");
         out[i].writeObject(board);
-    }
+    } // winner
 
     private void loser(int i) throws IOException {
-        out[i].writeObject("ENDGAME");
         out[i].writeObject("LOSER");
         out[i].writeObject(board);
-    }
+    } // loser
+
+    private void endgame() throws IOException {
+        for(int i=0; i<2; i++){
+            out[i].writeObject("ENDGAME");
+            out[i].writeObject(board);
+        }
+    } // endgame
 }
