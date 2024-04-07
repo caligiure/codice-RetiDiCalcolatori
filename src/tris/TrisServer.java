@@ -12,21 +12,26 @@ public class TrisServer {
     private int numPlayers;
     private final Semaphore mutexPlayers, readyPlayers;
 
-    public TrisServer() throws IOException {
+    public TrisServer() {
         int serverPort = 8001; // su cui il server riceve le richieste di iniziare una partita
-        ss = new ServerSocket(serverPort);
-        waitingPlayers = new LinkedList<>();
-        numPlayers=0;
-        mutexPlayers = new Semaphore(1);
-        readyPlayers = new Semaphore(0);
-        ClientAccepter ca = new ClientAccepter();
-        ca.start();
-        GameStarter gs =new GameStarter();
-        gs.start();
+        try {
+            ss = new ServerSocket(serverPort);
+            waitingPlayers = new LinkedList<>();
+            numPlayers=0;
+            mutexPlayers = new Semaphore(1);
+            readyPlayers = new Semaphore(0);
+            ClientAccepter ca = new ClientAccepter();
+            ca.start();
+            GameStarter gs =new GameStarter();
+            gs.start();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     class ClientAccepter extends Thread {
         public void run(){
+            System.out.println("Accepting clients");
             //noinspection InfiniteLoopStatement
             while(true){
                 try {

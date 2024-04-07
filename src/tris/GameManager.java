@@ -63,6 +63,7 @@ public class GameManager extends Thread {
             done=true;
             try {
                 board.makeMove(i, m.getX(), m.getY());
+                out[i].writeObject("OK");
             } catch (IllegalArgumentException e) {
                 out[i].writeObject("ERROR");
                 out[i].writeObject(e);
