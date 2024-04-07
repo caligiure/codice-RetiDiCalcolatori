@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="Board is perfect">
-      <change afterPath="$PROJECT_DIR$/src/tris/TrisClient.java" afterDir="false" />
+    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="Added TrisClient">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tris/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tris/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tris/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tris/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tris/TrisClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tris/TrisClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tris/TrisServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tris/TrisServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,14 +33,12 @@
     &quot;assignee&quot;: &quot;caligiure&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="430db845-8037-4fc6-9a7a-c9ea9f829b7f" />
-        <option name="url" value="https://github.com/caligiure/codice-RetiDiCalcolatori.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/caligiure/codice-RetiDiCalcolatori.git",
+    "accountId": "430db845-8037-4fc6-9a7a-c9ea9f829b7f"
+  }
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/tris/Board.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -58,37 +57,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.BetClient.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BetServer.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BetServer_v2.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Board.executor&quot;: &quot;Run&quot;,
-    &quot;Application.GameManager.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MulticastTimeClient.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MulticastTimeServer.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TimeClient.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TimeClientMod.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TimeServer.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TimeServerMod.executor&quot;: &quot;Run&quot;,
-    &quot;Application.URLConnectionTest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.URLTest.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Uni/RetiDiCalcolatori/codice-RetiDiCalcolatori/src/ese4/scommesseCavalli&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.BetClient.executor": "Run",
+    "Application.BetServer.executor": "Run",
+    "Application.BetServer_v2.executor": "Run",
+    "Application.Board.executor": "Run",
+    "Application.GameManager.executor": "Run",
+    "Application.MulticastTimeClient.executor": "Run",
+    "Application.MulticastTimeServer.executor": "Run",
+    "Application.TimeClient.executor": "Run",
+    "Application.TimeClientMod.executor": "Run",
+    "Application.TimeServer.executor": "Run",
+    "Application.TimeServerMod.executor": "Run",
+    "Application.TrisClient.executor": "Run",
+    "Application.TrisServer.executor": "Run",
+    "Application.URLConnectionTest.executor": "Run",
+    "Application.URLTest.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Uni/RetiDiCalcolatori/codice-RetiDiCalcolatori/src/ese4/scommesseCavalli",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Uni\RetiDiCalcolatori\codice-RetiDiCalcolatori\src\ese4\scommesseCavalli" />
@@ -100,7 +101,7 @@
       <recent name="ese3" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Board">
+  <component name="RunManager">
     <configuration name="BetClient" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ese4.scommesseCavalli.BetClient" />
       <module name="codice-RetiDiCalcolatori" />
@@ -140,8 +141,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="tris.GameManager" />
+    <configuration name="TrisClient" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="tris.TrisClient" />
+      <module name="codice-RetiDiCalcolatori" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tris.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TrisServer" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="tris.TrisServer" />
       <module name="codice-RetiDiCalcolatori" />
       <extension name="coverage">
         <pattern>
@@ -154,17 +168,25 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.TrisClient" />
+      <item itemvalue="Application.TrisServer" />
       <item itemvalue="Application.BetClient" />
       <item itemvalue="Application.BetServer" />
-      <item itemvalue="Application.GameManager" />
       <item itemvalue="Application.Board" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Board" />
-        <item itemvalue="Application.GameManager" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -190,7 +212,8 @@
       <workItem from="1712311485009" duration="4092000" />
       <workItem from="1712395051970" duration="19419000" />
       <workItem from="1712481012422" duration="4685000" />
-      <workItem from="1712490372509" duration="4489000" />
+      <workItem from="1712490372509" duration="5032000" />
+      <workItem from="1712513211557" duration="3178000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit">
       <option name="closed" value="true" />
@@ -360,7 +383,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712486514430</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Added TrisClient">
+      <option name="closed" value="true" />
+      <created>1712512616269</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1712512616269</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,6 +416,7 @@
     <MESSAGE value="Added project Tris (class Board is perfect)" />
     <MESSAGE value="To-do: check if the board is full" />
     <MESSAGE value="Board is perfect" />
-    <option name="LAST_COMMIT_MESSAGE" value="Board is perfect" />
+    <MESSAGE value="Added TrisClient" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added TrisClient" />
   </component>
 </project>

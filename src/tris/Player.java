@@ -11,11 +11,6 @@ public class Player {
         this.username = username;
     }
 
-    public Player( Socket sock) {
-        this.sock = sock;
-        username="New player";
-    }
-
     public String getUsername() {
         return username;
     }
@@ -29,8 +24,7 @@ public class Player {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Player player = (Player) o;
-        // i players sono identificati dall'indirizzo ip
-        return sock.getInetAddress().equals(player.getSock().getInetAddress());
+        return player.getUsername().equals(getUsername());
     }
 
     @Override
@@ -40,6 +34,6 @@ public class Player {
 
     @Override
     public String toString() {
-        return "Player " + username;
+        return username;
     }
 }

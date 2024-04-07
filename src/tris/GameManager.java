@@ -17,13 +17,14 @@ public class GameManager extends Thread {
         board = new Board();
         in = new ObjectInputStream[3];
         out =new ObjectOutputStream[3];
+        System.out.println("Starting GameManager: "+p[0]+" vs "+p[1]);
         try{
-            in[0] = new ObjectInputStream(p0.getSock().getInputStream());
-            in[1] = new ObjectInputStream(p1.getSock().getInputStream());
             out[0] = new ObjectOutputStream(p0.getSock().getOutputStream());
             out[1] = new ObjectOutputStream(p1.getSock().getOutputStream());
+            in[0] = new ObjectInputStream(p0.getSock().getInputStream());
+            in[1] = new ObjectInputStream(p1.getSock().getInputStream());
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("Error: "+e.getMessage());
         }
     } // constructor
 

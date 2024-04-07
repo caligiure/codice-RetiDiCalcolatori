@@ -28,16 +28,16 @@ public class TrisClient {
 
         public GamePlayer(){
             try {
-                in = new ObjectInputStream(s.getInputStream());
                 out = new ObjectOutputStream(s.getOutputStream());
-
+                in = new ObjectInputStream(s.getInputStream());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         } // constructor
 
         public void run(){
-            while(true){
+            boolean more = true;
+            while(more){
                 try{
                     String cmd = (String) in.readObject();
                     switch (cmd) {
@@ -54,23 +54,25 @@ public class TrisClient {
                             break;
                         case "WINNER":
                             System.out.println("YOU WIN");
-                            b = (Board) in.readObject();
-                            System.out.println(b);
+                            Board b1 = (Board) in.readObject();
+                            System.out.println(b1);
+                            more = false;
                             break;
                         case "LOSER":
                             System.out.println("YOU LOSE");
-                            b = (Board) in.readObject();
-                            System.out.println(b);
+                            Board b2 = (Board) in.readObject();
+                            System.out.println(b2);
+                            more = false;
                             break;
                         case "ENDGAME":
                             System.out.println("DRAW");
-                            b = (Board) in.readObject();
-                            System.out.println(b);
+                            Board b3 = (Board) in.readObject();
+                            System.out.println(b3);
+                            more = false;
                             break;
                         default:
                             System.out.println("Error: command "+cmd+" is not supported.");
                     } // switch
-
                 } catch (IOException | ClassNotFoundException e) {
                     throw new RuntimeException(e);
                 }
@@ -104,5 +106,9 @@ public class TrisClient {
         } // makeMove
 
     } // class
+
+    public static void main(String[] args){
+        new TrisClient();
+    }
 
 } // class
