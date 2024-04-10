@@ -1,31 +1,21 @@
 package tris;
 
-import java.io.Serializable;
-
-public class Board implements Serializable {
+public class Board {
     private final int n;
     private final int m;
-    private final int[][] mat;
+    private final char[][] mat;
 
     public Board(){
         n=3;
         m=3;
-        mat = new int[n][m];
-       reset();
-    }
-
-    @SuppressWarnings("unused")
-    public Board(int n, int m) {
-        this.n = n;
-        this.m = m;
-        mat = new int[n][m];
+        mat = new char[n][m];
         reset();
     }
 
     public void reset() {
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
-                mat[i][j] = -1;
+                mat[i][j] = '_';
             }
         }
     }
@@ -43,104 +33,91 @@ public class Board implements Serializable {
         StringBuilder sb = new StringBuilder();
         for(int i=0; i<n; i++){
             for(int j=0; j<m; j++){
-                if(mat[i][j]==0)
-                    sb.append("O").append(" ");
-                else if(mat[i][j]==1)
-                    sb.append("X").append(" ");
-                else
-                    sb.append("_").append(" ");
+                sb.append(" ").append(mat[i][j]).append(" ");
+                if(j != m-1)
+                    sb.append("|");
             }
-            if(i!=n-1)
-                sb.append("\n");
+            switch (i) {
+                case 0: sb.append(" |  1 | 2 | 3 "); break;
+                case 1: sb.append(" |  4 | 5 | 6 "); break;
+                case 2: sb.append(" |  7 | 8 | 9 "); break;
+                default: sb.append(" "); break;
+            }
+            if(i != n-1) {
+                sb.append("\n---+---+--- | ---+---+---\n" );
+            }
         }
         return sb.toString();
     }
 
-    public void makeMove(int p, int x, int y) throws IllegalArgumentException {
+    public boolean makeMove(char mark, int x, int y) throws IllegalArgumentException {
         if(x<0 || x>=n)
             throw new IllegalArgumentException("Illegal x argument");
-        if(y<0 ||y>=m)
+        else if(y<0 ||y>=m)
             throw new IllegalArgumentException("Illegal y argument");
-        if(p!=0 && p!=1)
-            throw new IllegalArgumentException("Illegal p argument");
-        if(mat[x][y]==0 || mat[x][y]==1)
+        else if(mark!='X' && mark!='O')
+            throw new IllegalArgumentException("Illegal mark argument");
+        else if(mat[x][y]=='O' || mat[x][y]=='X')
             throw new IllegalArgumentException("This box is already marked");
-        mat[x][y]=p;
+        else {
+            mat[x][y]=mark;
+            return true;
+        }
     }
 
     public boolean checkWin() {
-        for(int i=1; i<n-1; i++){
-            for(int j=1; j<m-1; j++){
-                int ul = mat[i-1][j-1]; // up-left
-                int ur = mat[i-1][j+1]; // up-right
-                int cc = mat[i][j];     // center
-                int uc = mat[i-1][j];   // up-center
-                int dc = mat[i+1][j];   // down-center
-                int lc = mat[i][j-1];   // left-center
-                int rc = mat[i][j+1];   // right-center
-                int dl = mat[i+1][j-1]; // down-left
-                int dr = mat[i+1][j+1]; // down-right
-                boolean tris = ( ul == uc && ul == ur && ul != 0 )  // tris orizzontale superiore
-                        ||
-                                ( ul != 0 && ul == lc && ul == dl)  // tris verticale sinistro
-                        ||
-                                ( dr != 0 && dr == dl && dr == dc ) // tris orizzonatle inferiore
-                        ||
-                                ( dr != 0 && dr == ur && dr == rc ) // tris verticale destro
-                        ||
-                                ( cc != 0 && cc == ul && cc == dr)  // tris diagonale principale
-                        ||
-                                ( cc != 0 && cc == ur && cc == dl)  // tris diagonale secondaria
-                        ||
-                                ( cc != 0 && cc == lc && cc == rc)  // tris orizzontale centrale
-                        ||
-                                (cc != 0 && cc == uc && cc == dc)   // tris verticale centrale
-                ;
-                if(tris)
-                    return true;
-            }
+        for(int i=0; i<n; i++) {
+            if(mat[i][0]==mat[i][1] && mat[i][1]==mat[i][2] && mat[i][2]!='_')
+                return true;
+            if(mat[0][i]==mat[1][i] && mat[1][i]==mat[2][i] && mat[2][i]!='_')
+                return true;
         }
-        return false;
+        return mat[0][0] == mat[1][1] && mat[1][1] == mat[2][2] && mat[2][2] != '_';
     }
 
-    public boolean checkEndgame() {
-        int c = 0;
+    public boolean checkDraw() {
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
-                if(mat[i][j]==0 || mat[i][j]==1)
-                    c++;
+                if(mat[i][j]=='_')
+                    return false;
             }
         }
-        return c == n*m;
+        return true;
     }
 
     public static void main(String[] args){
         Board b = new Board();
-        b.makeMove(1,0,0);
-        b.makeMove(1,1,1);
-        b.makeMove(1,2,2);
+        b.makeMove('X',0,0);
+        b.makeMove('X',1,1);
+        b.makeMove('X',2,2);
         System.out.println(b);
         System.out.println(b.checkWin());
         b.reset();
-        b.makeMove(1,0,2);
-        b.makeMove(0,1,1);
-        b.makeMove(1,2,0);
+        b.makeMove('X',0,2);
+        b.makeMove('O',1,1);
+        b.makeMove('X',2,0);
         System.out.println(b);
         System.out.println(b.checkWin());
         b.reset();
-        b.makeMove(1,2,0);
-        b.makeMove(1,2,1);
-        b.makeMove(1,2,2);
+        b.makeMove('X',2,0);
+        b.makeMove('X',2,1);
+        b.makeMove('X',2,2);
         System.out.println(b);
         System.out.println(b.checkWin());
         b.reset();
         for(int i=0;i<b.getN();i++){
             for(int j=0;j<b.getM();j++){
-                b.makeMove((int) Math.round(Math.random()), i, j);
+                long p = Math.round(Math.random());
+                if(p==0)
+                    b.makeMove('O', i, j);
+                else
+                    b.makeMove('X', i, j);
             }
         }
         System.out.println(b);
         System.out.println(b.checkWin());
-        System.out.println(b.checkEndgame());
+        System.out.println(b.checkDraw());
+
     }
+
 }

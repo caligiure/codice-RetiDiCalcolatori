@@ -3,12 +3,17 @@ package tris;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
 public class GameManager extends Thread {
     private final Player[] p;
     private final ObjectInputStream[] in;
     private final ObjectOutputStream[] out;
     private final Board board;
+
+    public enum Cmd implements Serializable {
+        READ_BOARD, WAIT, MOVE, WINNER, LOSER, DRAW, MOVE_DONE, ERROR
+    }
 
     public GameManager(Player p0, Player p1) {
         p = new Player[2];
@@ -32,61 +37,62 @@ public class GameManager extends Thread {
         try {
             System.out.println("Starting game: "+p[0]+" vs "+p[1]);
             boolean nextRound = true;
-            int round = (int) Math.round(Math.random());
+            int turn = (int) Math.round(Math.random());
+            char mark = (turn==0)? 'O' : 'X';
             while(nextRound) {
                 for(int i=0; i<2; i++){
-                    out[i].writeObject("READY");
-                    out[i].writeObject(board);
+                    out[i].writeObject(Cmd.READ_BOARD);
+                    out[i].writeObject(board.toString());
                 }
-                out[(round+1)%2].writeObject("WAIT");
-                move(round);
+                out[(turn+1)%2].writeObject(Cmd.WAIT);
+                getMove(turn, mark);
                 if (board.checkWin()) {
-                    winner(round);
-                    loser((round + 1) % 2);
+                    winner(turn);
+                    loser((turn + 1) % 2);
                     nextRound = false;
                 }
-                if (board.checkEndgame()) { // CONTROLLA SE LA SCACCHIERA E' PIENA
-                    endgame();
+                else if (board.checkDraw()) {
+                    draw();
                     nextRound = false;
                 }
-                round = (round + 1) % 2;
+                turn = (turn + 1) % 2;
+                mark = (turn==0)? 'O' : 'X';
             } // while
         } catch (IOException | ClassNotFoundException ex) {
             throw new RuntimeException(ex);
         }
     } // run
 
-    private void move(int i) throws IOException, ClassNotFoundException {
-        out[i].writeObject("MOVE");
-        boolean done = false;
-        while(!done){
-            Move m = (Move) in[i].readObject();
-            done=true;
+    private void getMove(int turn, char mark) throws IOException, ClassNotFoundException {
+        out[turn].writeObject(Cmd.MOVE);
+        boolean move_done = false;
+        while(!move_done){
+            Move m = (Move) in[turn].readObject();
             try {
-                board.makeMove(i, m.getX(), m.getY());
-                out[i].writeObject("OK");
+                move_done = board.makeMove(mark, m.getX(), m.getY());
+                out[turn].writeObject(Cmd.MOVE_DONE);
             } catch (IllegalArgumentException e) {
-                out[i].writeObject("ERROR");
-                out[i].writeObject(e);
-                done=false;
+                out[turn].writeObject(Cmd.ERROR);
+                out[turn].writeObject(e.getMessage());
             }
         } // while
     } // move
 
     private void winner(int i) throws IOException {
-        out[i].writeObject("WINNER");
-        out[i].writeObject(board);
+        out[i].writeObject(Cmd.WINNER);
+        out[i].writeObject(board.toString());
     } // winner
 
     private void loser(int i) throws IOException {
-        out[i].writeObject("LOSER");
-        out[i].writeObject(board);
+        out[i].writeObject(Cmd.LOSER);
+        out[i].writeObject(board.toString());
     } // loser
 
-    private void endgame() throws IOException {
+    private void draw() throws IOException {
         for(int i=0; i<2; i++){
-            out[i].writeObject("ENDGAME");
-            out[i].writeObject(board);
+            out[i].writeObject(Cmd.DRAW);
+            out[i].writeObject(board.toString());
         }
     } // endgame
+
 }

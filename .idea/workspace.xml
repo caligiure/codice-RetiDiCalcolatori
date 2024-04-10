@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="Added TrisClient">
+    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="To-do: solve problems making the first move">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tris/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tris/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tris/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tris/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tris/TrisClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tris/TrisClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tris/TrisServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tris/TrisServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,12 +29,12 @@
     &quot;assignee&quot;: &quot;caligiure&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/caligiure/codice-RetiDiCalcolatori.git",
-    "accountId": "430db845-8037-4fc6-9a7a-c9ea9f829b7f"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/caligiure/codice-RetiDiCalcolatori.git&quot;,
+    &quot;accountId&quot;: &quot;430db845-8037-4fc6-9a7a-c9ea9f829b7f&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/tris/Board.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -80,7 +76,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Uni/RetiDiCalcolatori/codice-RetiDiCalcolatori/src/ese4/scommesseCavalli",
+    "last_opened_file_path": "C:/Uni/IngDelSoftware/codice_IngDelSoftware",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -101,7 +97,7 @@
       <recent name="ese3" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.TrisClient">
     <configuration name="BetClient" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ese4.scommesseCavalli.BetClient" />
       <module name="codice-RetiDiCalcolatori" />
@@ -213,7 +209,8 @@
       <workItem from="1712395051970" duration="19419000" />
       <workItem from="1712481012422" duration="4685000" />
       <workItem from="1712490372509" duration="5032000" />
-      <workItem from="1712513211557" duration="3178000" />
+      <workItem from="1712513211557" duration="3887000" />
+      <workItem from="1712562356974" duration="919000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit">
       <option name="closed" value="true" />
@@ -391,7 +388,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712512616269</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="To-do: solve problems making the first move">
+      <option name="closed" value="true" />
+      <created>1712520453151</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1712520453151</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -417,6 +422,7 @@
     <MESSAGE value="To-do: check if the board is full" />
     <MESSAGE value="Board is perfect" />
     <MESSAGE value="Added TrisClient" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added TrisClient" />
+    <MESSAGE value="To-do: solve problems making the first move" />
+    <option name="LAST_COMMIT_MESSAGE" value="To-do: solve problems making the first move" />
   </component>
 </project>
