@@ -5,7 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="To-do: solve problems making the first move">
+      <change afterPath="$PROJECT_DIR$/src/ese4/communicator/Communicator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tris/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tris/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tris/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tris/.idea/runConfigurations/TrisClient.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tris/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tris/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tris/Board.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tris/GameManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tris/Move.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tris/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tris/TrisClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tris/TrisServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tris/tris.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +73,7 @@
     "Application.BetServer.executor": "Run",
     "Application.BetServer_v2.executor": "Run",
     "Application.Board.executor": "Run",
+    "Application.Communicator.executor": "Run",
     "Application.GameManager.executor": "Run",
     "Application.MulticastTimeClient.executor": "Run",
     "Application.MulticastTimeServer.executor": "Run",
@@ -76,7 +91,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Uni/IngDelSoftware/codice_IngDelSoftware",
+    "last_opened_file_path": "C:/Uni/code-ingegneria-informatica/retiCalcolatori/esercitazioni",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -97,7 +112,7 @@
       <recent name="ese3" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TrisClient">
+  <component name="RunManager">
     <configuration name="BetClient" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ese4.scommesseCavalli.BetClient" />
       <module name="codice-RetiDiCalcolatori" />
@@ -211,6 +226,7 @@
       <workItem from="1712490372509" duration="5032000" />
       <workItem from="1712513211557" duration="3887000" />
       <workItem from="1712562356974" duration="919000" />
+      <workItem from="1712842519564" duration="2914000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit">
       <option name="closed" value="true" />
