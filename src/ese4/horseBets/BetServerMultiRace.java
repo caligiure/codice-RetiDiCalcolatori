@@ -1,4 +1,4 @@
-package ese4.ludopatiaMultipla;
+package ese4.horseBets;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,13 +10,13 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-public class BetServer {
+public class BetServerMultiRace {
     int SERVER_TCP_PORT = 8001;
     private Dispatcher dispatcher;
     private Starter starter;
     private GameManager gameManager;
 
-    public BetServer(LinkedList<Race> races) {
+    public BetServerMultiRace(LinkedList<Race> races) {
         new Dispatcher().start();
         new Starter().start();
         new GameManager(races).start();

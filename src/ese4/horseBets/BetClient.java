@@ -1,4 +1,4 @@
-package ese4.ludopatia;
+package ese4.horseBets;
 
 import java.io.BufferedReader;
 import java.io.IOException;

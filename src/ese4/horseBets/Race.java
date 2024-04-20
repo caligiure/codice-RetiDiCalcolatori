@@ -1,4 +1,4 @@
-package ese4.ludopatiaMultipla;
+package ese4.horseBets;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -8,14 +8,14 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.LinkedList;
 
-import static ese4.ludopatia.BetClient.printInfo;
+import static ese4.horseBets.BetClient.printInfo;
 
 class Race extends Thread {
     private int raceID;
     private boolean active = false;
     private Date startTime;
     private Date startBetting;
-    private LinkedList<BetServer.Bet> bets;
+    private LinkedList<BetServerMultiRace.Bet> bets;
 
     public Race(int raceID, Date startTime) {
         this.raceID = raceID;
@@ -28,7 +28,7 @@ class Race extends Thread {
         return raceID;
     }
 
-    boolean addBet(BetServer.Bet bet) {
+    boolean addBet(BetServerMultiRace.Bet bet) {
         if(!active) {
             bets.add(bet);
             return true;
@@ -66,8 +66,8 @@ class Race extends Thread {
             printInfo("Race "+getRaceID()+" ended");
             int winningHorse = (int) (Math.random()*12);
             printInfo("The winning horse of race " + getRaceID() + " is " + winningHorse);
-            LinkedList<BetServer.Bet> winners = new LinkedList<>();
-            for (BetServer.Bet b : bets) {
+            LinkedList<BetServerMultiRace.Bet> winners = new LinkedList<>();
+            for (BetServerMultiRace.Bet b : bets) {
                 if( b.horse == winningHorse ) {
                     winners.add(b);
                 }
@@ -75,7 +75,7 @@ class Race extends Thread {
             InetAddress addr = InetAddress.getByName("230.0.0.1");
             MulticastSocket ms = new MulticastSocket();
             StringBuilder sb = new StringBuilder();
-            for (BetServer.Bet b : winners) {
+            for (BetServerMultiRace.Bet b : winners) {
                 sb.append(b.address.toString()).append(' ').append(b.amount*12);
             }
             if(winners.isEmpty()){

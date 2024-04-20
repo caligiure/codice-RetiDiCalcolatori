@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="Added Communicator">
-      <change afterPath="$PROJECT_DIR$/src/ese4/ludopatia/BetClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ese4/ludopatia/BetServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ese4/ludopatiaMultipla/BetServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ese4/ludopatiaMultipla/Race.java" afterDir="false" />
+    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="Developing BetServer with multiple races">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ese4/ludopatia/BetClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese4/horseBets/BetClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ese4/ludopatia/BetServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese4/horseBets/BetServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ese4/ludopatiaMultipla/Race.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese4/ludopatiaMultipla/Race.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,12 +182,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ese4.ludopatia.BetServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ese4.ludopatia.BetServer" />
+    <configuration name="ese4.horseBets.BetServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ese4.horseBets.BetServer" />
       <module name="codice-RetiDiCalcolatori" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ese4.ludopatia.*" />
+          <option name="PATTERN" value="ese4.horseBets.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -201,13 +200,13 @@
       <item itemvalue="Application.TrisServer" />
       <item itemvalue="Application.BetClient" />
       <item itemvalue="Application.BetServer" />
-      <item itemvalue="Application.ese4.ludopatia.BetServer" />
+      <item itemvalue="Application.ese4.horseBets.BetServer" />
       <item itemvalue="Application.Communicator" />
       <item itemvalue="Application.Board" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ese4.ludopatia.BetServer" />
+        <item itemvalue="Application.ese4.horseBets.BetServer" />
         <item itemvalue="Application.Communicator" />
         <item itemvalue="Application.Board" />
       </list>
@@ -251,7 +250,7 @@
       <workItem from="1712842519564" duration="6416000" />
       <workItem from="1712864528360" duration="4219000" />
       <workItem from="1713270659882" duration="3071000" />
-      <workItem from="1713530836907" duration="14025000" />
+      <workItem from="1713530836907" duration="14298000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit">
       <option name="closed" value="true" />
@@ -445,7 +444,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712852707230</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Developing BetServer with multiple races">
+      <option name="closed" value="true" />
+      <created>1713548102111</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1713548102112</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -473,6 +480,7 @@
     <MESSAGE value="Added TrisClient" />
     <MESSAGE value="To-do: solve problems making the first move" />
     <MESSAGE value="Added Communicator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Communicator" />
+    <MESSAGE value="Developing BetServer with multiple races" />
+    <option name="LAST_COMMIT_MESSAGE" value="Developing BetServer with multiple races" />
   </component>
 </project>
