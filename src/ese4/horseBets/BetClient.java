@@ -17,45 +17,40 @@ public class BetClient {
     static final String multicastGroup = "230.0.0.1";
     static final int SERVER_MULTICAST_PORT = 8002;
 
-
     BetClient() {
         try {
             SERVER_IP = InetAddress.getLocalHost();
         } catch (IOException e) { printError("Couldn't get IP", e); }
-
         entryPoint();
     }
 
-    public static void printInfo(String message) {
-        System.out.println("INFO: " + message);
+    private static void printInfo(String message) {
+        System.out.println(message);
     }
-    static void printError(String message, Exception e) {
-        System.err.println(message + "\n JVM: " + e);
+    private static void printError(String message, Exception e) {
+        System.err.println(message + "\n" + e);
     }
 
     void entryPoint() {
         BufferedReader in = null;
         PrintWriter pw = null;
+        Socket server;
         try {
-            printInfo("Trying to connect to server " + SERVER_IP);
-            Socket server = new Socket(SERVER_IP, SERVER_TCP_PORT);
+            printInfo("Trying to connect to server on port " + SERVER_TCP_PORT);
+            server = new Socket(SERVER_IP, SERVER_TCP_PORT);
+            printInfo("Connected to server");
             in = new BufferedReader(new InputStreamReader(server.getInputStream()));
-            String line = "";
-            line = in.readLine();
-            System.out.println(line);
-            //if (line.startsWith("OK")) {
-                Scanner user = new Scanner(System.in);
-                String bet = user.nextLine();
-                pw = new PrintWriter(server.getOutputStream(), true);
-                pw.println(bet);
-                printInfo("Bet sent!");
-            //} else if (line.startsWith("CLOSED")) {
-                // falltrough
-            //} else {
-            //    printError("Unexpected message", new Exception());
-            //}
+            String line = in.readLine(); // 1. get races
+            printInfo(line);
+            Scanner user = new Scanner(System.in);
+            String bet = user.nextLine();
+            pw = new PrintWriter(server.getOutputStream(), true);
+            pw.println(bet); // 2. send bet
+            printInfo("Bet sent!");
+            line = in.readLine(); // 3. get outcome
+            printInfo(line);
         } catch (IOException e) {
-            System.err.println("Something failed");
+            printError("Something failed: ", e);
         } finally {
             try {
                 if (in != null) in.close();
@@ -64,9 +59,8 @@ public class BetClient {
                 printError("Couldn't shut down pipe gracefully", e);
             }
         }
-
-        printInfo("Now wait for the bet's results");
-        MulticastSocket ms = null;
+        printInfo("Wait for the bet's results");
+        MulticastSocket ms;
         try {
             ms = new MulticastSocket(SERVER_MULTICAST_PORT);
             InetAddress group = InetAddress.getByName(multicastGroup);

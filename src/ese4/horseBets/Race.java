@@ -8,20 +8,23 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.LinkedList;
 
-import static ese4.horseBets.BetClient.printInfo;
 
-class Race extends Thread {
-    private int raceID;
+public class Race extends Thread {
+    private final int raceID;
     private boolean active = false;
-    private Date startTime;
-    private Date startBetting;
-    private LinkedList<BetServerMultiRace.Bet> bets;
+    private final Date startTime;
+    private final Date startBetting;
+    private final LinkedList<BetServerMultiRace.Bet> bets;
 
     public Race(int raceID, Date startTime) {
         this.raceID = raceID;
         bets = new LinkedList<>();
         this.startTime = startTime;
         startBetting=calculateStartBetting();
+    }
+
+    private static void printInfo(String s) {
+        System.out.println(s);
     }
 
     int getRaceID() {
@@ -60,6 +63,7 @@ class Race extends Thread {
     }
 
     public void run() {
+        MulticastSocket ms = null;
         try {
             printInfo("Race "+getRaceID()+" started");
             Thread.sleep(10 * 1000);
@@ -73,7 +77,7 @@ class Race extends Thread {
                 }
             }
             InetAddress addr = InetAddress.getByName("230.0.0.1");
-            MulticastSocket ms = new MulticastSocket();
+            ms = new MulticastSocket();
             StringBuilder sb = new StringBuilder();
             for (BetServerMultiRace.Bet b : winners) {
                 sb.append(b.address.toString()).append(' ').append(b.amount*12);
@@ -88,6 +92,8 @@ class Race extends Thread {
                 Thread.sleep(10 * 1000); // wait before sending another multicast
             }
         } catch (InterruptedException | IOException e) {
+            if(ms != null)
+                ms.close();
             throw new RuntimeException(e);
         }
     }

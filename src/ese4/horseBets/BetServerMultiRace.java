@@ -7,35 +7,59 @@ import java.io.PrintWriter;
 import java.net.*;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.LinkedList;
 
 public class BetServerMultiRace {
     int SERVER_TCP_PORT = 8001;
-    private Dispatcher dispatcher;
-    private Starter starter;
-    private GameManager gameManager;
+    private final Starter starter;
+    private final GameManager gameManager;
 
     public BetServerMultiRace(LinkedList<Race> races) {
         new Dispatcher().start();
-        new Starter().start();
-        new GameManager(races).start();
+        starter = new Starter();
+        starter.start();
+        gameManager = new GameManager(races);
+        gameManager.start();
     }
 
-    void printInfo(String s) {
-        System.out.println(s);
+    public static void main(String[] args) {
+        LinkedList<Race> races = new LinkedList<>();
+        Calendar startTime = Calendar.getInstance();
+        startTime.add(Calendar.MINUTE, 2);
+        Race race1 = new Race(1, startTime.getTime());
+        Race race2 = new Race(2, startTime.getTime());
+        races.add(race1);
+        races.add(race2);
+        new BetServerMultiRace(races);
+    }
+
+    private static void printInfo(String message) {
+        System.out.println(message);
+    }
+    private static void printError(String message, Exception e) {
+        System.err.println(message + "\n" + e);
     }
 
     class Dispatcher extends Thread {
         public void run() {
+            ServerSocket ss = null;
             try {
-                ServerSocket ss = new ServerSocket(SERVER_TCP_PORT);
+                ss = new ServerSocket(SERVER_TCP_PORT);
+                printInfo("Accepting connections on port " + SERVER_TCP_PORT);
                 while (true) {
                     Socket client = ss.accept();
                     starter.addClient(client);
+                    printInfo("Accepted client "+client.getInetAddress());
                 }
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                if (ss != null) {
+                    try {
+                        ss.close();
+                    } catch (IOException ex) {
+                        printError("Error closing server socket", ex);
+                    }
+                }
+                printError("Error creating server socket", e);
             }
         }
     }
@@ -54,7 +78,7 @@ public class BetServerMultiRace {
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
+                        printError("Starter has been interrupted", e);
                     }
                 }
                 Socket client = clientList.getLast();
@@ -72,17 +96,18 @@ public class BetServerMultiRace {
         }
 
         public void run() {
-            BufferedReader in = null;
             PrintWriter out = null;
             try {
-                in= new BufferedReader(new InputStreamReader(client.getInputStream()));
+                BufferedReader in= new BufferedReader(new InputStreamReader(client.getInputStream()));
                 out = new PrintWriter(client.getOutputStream(), true);
                 String races = gameManager.getRaces();
-                out.println(races);
-                String response = in.readLine();
+                out.println(races); // 1. send races
+                printInfo("Sent races to "+client.getInetAddress());
+                String response = in.readLine(); //2. get bet
+                printInfo("Received bet from "+client.getInetAddress()+": "+response);
                 Bet bet = new Bet(response, client.getInetAddress());
                 if(gameManager.placeBet(bet))
-                    out.println("Bet placed correctly");
+                    out.println("Bet placed correctly"); // 3. send outcome
                 else
                     out.println("Bet can't be placed");
             } catch (IOException e) {
@@ -114,11 +139,11 @@ public class BetServerMultiRace {
         }
     }
 
-    class GameManager extends Thread {
-        private LinkedList<Race> races;
+    static class GameManager extends Thread {
+        private final LinkedList<Race> races;
 
         public GameManager(LinkedList<Race> races) {
-            races=new LinkedList<>();
+            this.races = races;
         }
 
         boolean placeBet(Bet bet) {
@@ -142,16 +167,17 @@ public class BetServerMultiRace {
         }
 
         public void run() {
-            Iterator<Race> it = races.iterator();
             while(true) {
                 for(Race race : races) {
                     Date now = Calendar.getInstance().getTime();
                     if(race.getStartBetting().before(now) && race.getStartBetting().after(now)) {
                         race.activate();
                         race.start();
+                        printInfo("RACE "+race.getRaceID()+" started");
                     }
                 }
             }
         }
     }
+
 }
