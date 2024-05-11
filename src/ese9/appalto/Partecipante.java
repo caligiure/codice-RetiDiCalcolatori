@@ -28,7 +28,7 @@ public class Partecipante extends Thread {
             ms.receive(packet);
             String req = new String(packet.getData()).trim();
             printMsg("Richiesta dell'ente: "+req);
-            Giudice.Offerta off = new Giudice.Offerta((int)Thread.currentThread().threadId(), price);
+            Offerta off = new Offerta((int)Thread.currentThread().threadId(), price);
             Socket socket = new Socket(Giudice.SERVER_ADDR, Giudice.PARTICIPANT_PORT);
             ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
             out.writeObject(off);

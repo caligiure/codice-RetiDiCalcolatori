@@ -3,7 +3,6 @@ package ese9.appalto;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.net.*;
 import java.util.LinkedList;
 import java.util.List;
@@ -35,20 +34,6 @@ public class Giudice {
 
     private void printMsg(String msg){ System.out.println(msg); }
 
-    public static class Richiesta implements Serializable {
-        public final String description;
-        public final int price;
-
-        Richiesta(String description, int price) {
-            this.description = description;
-            this.price = price;
-        }
-
-        public String toString() {
-            return description + " - " + price;
-        }
-    }
-
     private Richiesta getRichiesta() {
         try {
             ServerSocket ss = new ServerSocket(REM_PORT);
@@ -56,6 +41,7 @@ public class Giudice {
             printMsg("Connected to Ente: " + remote_socket.getInetAddress()+":"+remote_socket.getPort());
             ObjectInputStream in = new ObjectInputStream(remote_socket.getInputStream());
             Richiesta req = (Richiesta) in.readObject();
+            ss.close();
             return req;
         } catch (ClassNotFoundException | IOException e) {
             e.printStackTrace();
@@ -76,19 +62,6 @@ public class Giudice {
                 socket.close();
             }
             throw new RuntimeException(e);
-        }
-    }
-
-    public static class Offerta implements Serializable {
-        public final int id, price;
-
-        Offerta(int id, int price) {
-            this.id = id;
-            this.price = price;
-        }
-
-        public String toString() {
-            return id + " - " + price;
         }
     }
 

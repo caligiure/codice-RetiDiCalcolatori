@@ -12,7 +12,7 @@ public class Ente {
         System.out.println(msg);
     }
 
-    public Ente (Giudice.Richiesta req) {
+    public Ente (Richiesta req) {
         try {
             printMsg("Waiting for connection...");
             Socket socket = new Socket(InetAddress.getByName(Giudice.SERVER_ADDR), Giudice.REM_PORT);
@@ -21,8 +21,8 @@ public class Ente {
             out.writeObject(req);
             printMsg("Request sent to Giudice");
             ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
-            Giudice.Offerta winner = (Giudice.Offerta) in.readObject();
-            System.out.println(winner);
+            Offerta winner = (Offerta) in.readObject();
+            System.out.println("Winner: "+winner);
             socket.close();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -30,6 +30,6 @@ public class Ente {
     }
 
     public static void main(String[] args) {
-        new Ente(new Giudice.Richiesta("Rotonda", 1000));
+        new Ente(new Richiesta("Rotonda", 1000));
     }
 }

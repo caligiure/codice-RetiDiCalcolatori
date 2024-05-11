@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="Added BetServerMultiRace">
-      <change afterPath="$PROJECT_DIR$/src/ese9/appalto/Ente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ese9/appalto/Giudice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ese9/appalto/Partecipante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="Added ese9.appalto">
+      <change afterPath="$PROJECT_DIR$/src/ese9/appalto/Offerta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ese9/appalto/Richiesta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ese9/appaltoTimed/GiudiceTimed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ese4/horseBets/BetClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese4/horseBets/BetClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ese4/horseBets/BetServerMultiRace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese4/horseBets/BetServerMultiRace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ese4/horseBets/Race.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese4/horseBets/Race.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ese9/appalto/Ente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese9/appalto/Ente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ese9/appalto/Giudice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese9/appalto/Giudice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ese9/appalto/Partecipante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese9/appalto/Partecipante.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +70,7 @@
     "Application.Ente.executor": "Run",
     "Application.GameManager.executor": "Run",
     "Application.Giudice.executor": "Run",
+    "Application.GiudiceTimed.executor": "Run",
     "Application.MulticastTimeClient.executor": "Run",
     "Application.MulticastTimeServer.executor": "Run",
     "Application.Partecipante.executor": "Run",
@@ -116,7 +116,7 @@
       <recent name="ese3" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Giudice">
+  <component name="RunManager" selected="Application.Ente">
     <configuration name="BetClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ese4.horseBets.BetClient" />
       <module name="codice-RetiDiCalcolatori" />
@@ -143,19 +143,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BetServerMultiRace" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ese4.horseBets.BetServerMultiRace" />
-      <module name="codice-RetiDiCalcolatori" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ese4.horseBets.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Ente" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ese9.appalto.Ente" />
       <module name="codice-RetiDiCalcolatori" />
@@ -175,6 +162,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ese9.appalto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GiudiceTimed" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ese9.appaltoTimed.GiudiceTimed" />
+      <module name="codice-RetiDiCalcolatori" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ese9.appaltoTimed.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -227,17 +227,17 @@
       <item itemvalue="Application.TrisServer" />
       <item itemvalue="Application.Ente" />
       <item itemvalue="Application.Giudice" />
+      <item itemvalue="Application.GiudiceTimed" />
       <item itemvalue="Application.Partecipante" />
       <item itemvalue="Application.BetClient" />
-      <item itemvalue="Application.BetServerMultiRace" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Ente" />
-        <item itemvalue="Application.Giudice" />
         <item itemvalue="Application.Partecipante" />
+        <item itemvalue="Application.Giudice" />
+        <item itemvalue="Application.GiudiceTimed" />
         <item itemvalue="Application.BetClient" />
-        <item itemvalue="Application.BetServerMultiRace" />
       </list>
     </recent_temporary>
   </component>
@@ -289,7 +289,7 @@
       <workItem from="1715243481166" duration="4654000" />
       <workItem from="1715334942228" duration="248000" />
       <workItem from="1715335221539" duration="490000" />
-      <workItem from="1715337181883" duration="10201000" />
+      <workItem from="1715337181883" duration="13974000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit">
       <option name="closed" value="true" />
@@ -499,7 +499,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713609103214</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Added ese9.appalto">
+      <option name="closed" value="true" />
+      <created>1715444326525</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1715444326525</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,7 +537,8 @@
     <MESSAGE value="Added Communicator" />
     <MESSAGE value="Developing BetServer with multiple races" />
     <MESSAGE value="Added BetServerMultiRace" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added BetServerMultiRace" />
+    <MESSAGE value="Added ese9.appalto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added ese9.appalto" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
