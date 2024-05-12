@@ -1,20 +1,14 @@
-package ese9.appaltoTimed;
+package ese9.appalto;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.net.*;
 import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
 
-public class GiudiceTimed {
-    public static final String SERVER_ADDR = "localhost";
-    public static final int REM_PORT = 2000;
-    public static final int MULTICAST_PORT = 3000;
-    public static final String MULTICAST_IP = "230.0.0.1";
-    public static final int PARTICIPANT_PORT = 4000;
+public class GiudiceTimed implements Giudice {
     private Socket remote_socket;
 
     public GiudiceTimed() {
@@ -34,20 +28,6 @@ public class GiudiceTimed {
     public static void main(String[] args) { new GiudiceTimed(); }
 
     private void printMsg(String msg){ System.out.println(msg); }
-
-    public static class Richiesta implements Serializable {
-        public final String description;
-        public final int price;
-
-        Richiesta(String description, int price) {
-            this.description = description;
-            this.price = price;
-        }
-
-        public String toString() {
-            return description + " - " + price;
-        }
-    }
 
     private Richiesta getRichiesta() {
         try {
@@ -77,19 +57,6 @@ public class GiudiceTimed {
                 socket.close();
             }
             throw new RuntimeException(e);
-        }
-    }
-
-    public static class Offerta implements Serializable {
-        public final int id, price;
-
-        Offerta(int id, int price) {
-            this.id = id;
-            this.price = price;
-        }
-
-        public String toString() {
-            return id + " - " + price;
         }
     }
 

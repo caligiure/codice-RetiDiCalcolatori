@@ -46,7 +46,7 @@ public class Partecipante extends Thread {
     }
 
     public static void main(String[] args) {
-        for (int i=0; i<Giudice.n; i++) {
+        for (int i = 0; i< GiudiceN.N; i++) {
             Partecipante p = new Partecipante( (int)(Math.random()*1000) );
             p.start();
         }
