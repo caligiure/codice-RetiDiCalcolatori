@@ -15,7 +15,7 @@ public class GiudiceN implements Giudice {
         printMsg("Waiting for connection...");
         Richiesta req = getRichiesta();
         printMsg("Richiesta: " + req.toString());
-        sendRichiesta(req);
+        sendRequest(req);
         printMsg("Request sent to Participants");
         printMsg("Waiting for Participants offers...");
         List<Offerta> offerte = getOfferte();
@@ -31,7 +31,7 @@ public class GiudiceN implements Giudice {
 
     private Richiesta getRichiesta() {
         try {
-            ServerSocket ss = new ServerSocket(REM_PORT);
+            ServerSocket ss = new ServerSocket(ENTE_PORT);
             remote_socket = ss.accept();
             printMsg("Connected to Ente: " + remote_socket.getInetAddress()+":"+remote_socket.getPort());
             ObjectInputStream in = new ObjectInputStream(remote_socket.getInputStream());
@@ -41,22 +41,6 @@ public class GiudiceN implements Giudice {
         } catch (ClassNotFoundException | IOException e) {
             e.printStackTrace();
             return null;
-        }
-    }
-
-    private void sendRichiesta(Richiesta req) {
-        MulticastSocket socket = null;
-        try {
-            socket = new MulticastSocket();
-            byte[] buf = req.toString().getBytes();
-            DatagramPacket dp = new DatagramPacket(buf, buf.length, InetAddress.getByName(MULTICAST_IP), MULTICAST_PORT);
-            socket.send(dp);
-            socket.close();
-        } catch (IOException e) {
-            if (socket != null) {
-                socket.close();
-            }
-            throw new RuntimeException(e);
         }
     }
 

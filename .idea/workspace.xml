@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="Added GiudiceTimed">
-      <change afterPath="$PROJECT_DIR$/src/ese9/appalto/GiudiceN.java" afterDir="false" />
+    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="New schema: Giudice(interface) -&gt; GiudiceN, GiudiceTimed">
+      <change afterPath="$PROJECT_DIR$/src/ese9/appalto/Gara.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ese9/appalto/GiudiceMulti.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ese9/appalto/RegistroGare.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ese9/appalto/Ente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese9/appalto/Ente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ese9/appalto/Giudice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese9/appalto/Giudice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ese9/appalto/Partecipante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese9/appalto/Partecipante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ese9/appaltoTimed/GiudiceTimed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese9/appalto/GiudiceTimed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ese9/appalto/GiudiceN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese9/appalto/GiudiceN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ese9/appalto/GiudiceTimed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese9/appalto/GiudiceTimed.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -58,51 +61,51 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.BetClient.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BetServer.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BetServerMultiRace.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BetServer_v2.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Board.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Communicator.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Ente.executor&quot;: &quot;Run&quot;,
-    &quot;Application.GameManager.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Giudice.executor&quot;: &quot;Run&quot;,
-    &quot;Application.GiudiceTimed.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MulticastTimeClient.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MulticastTimeServer.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Partecipante.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TimeClient.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TimeClientMod.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TimeServer.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TimeServerMod.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TrisClient.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TrisServer.executor&quot;: &quot;Run&quot;,
-    &quot;Application.URLConnectionTest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.URLTest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ese4.horseBets.BetClient.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ese4.ludopatia.BetClient.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ese4.ludopatia.BetServer.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Uni/RetiDiCalcolatori/codice-RetiDiCalcolatori&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.BetClient.executor": "Run",
+    "Application.BetServer.executor": "Run",
+    "Application.BetServerMultiRace.executor": "Run",
+    "Application.BetServer_v2.executor": "Run",
+    "Application.Board.executor": "Run",
+    "Application.Communicator.executor": "Run",
+    "Application.Ente.executor": "Run",
+    "Application.GameManager.executor": "Run",
+    "Application.Giudice.executor": "Run",
+    "Application.GiudiceTimed.executor": "Run",
+    "Application.MulticastTimeClient.executor": "Run",
+    "Application.MulticastTimeServer.executor": "Run",
+    "Application.Partecipante.executor": "Run",
+    "Application.TimeClient.executor": "Run",
+    "Application.TimeClientMod.executor": "Run",
+    "Application.TimeServer.executor": "Run",
+    "Application.TimeServerMod.executor": "Run",
+    "Application.TrisClient.executor": "Run",
+    "Application.TrisServer.executor": "Run",
+    "Application.URLConnectionTest.executor": "Run",
+    "Application.URLTest.executor": "Run",
+    "Application.ese4.horseBets.BetClient.executor": "Run",
+    "Application.ese4.ludopatia.BetClient.executor": "Run",
+    "Application.ese4.ludopatia.BetServer.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Uni/RetiDiCalcolatori/codice-RetiDiCalcolatori",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.updates",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Uni\RetiDiCalcolatori\codice-RetiDiCalcolatori\src\ese4\scommesseCavalli" />
@@ -292,7 +295,9 @@
       <workItem from="1715334942228" duration="248000" />
       <workItem from="1715335221539" duration="490000" />
       <workItem from="1715337181883" duration="14127000" />
-      <workItem from="1715505870938" duration="1980000" />
+      <workItem from="1715505870938" duration="3475000" />
+      <workItem from="1715512114583" duration="289000" />
+      <workItem from="1715591009436" duration="8064000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit">
       <option name="closed" value="true" />
@@ -526,14 +531,21 @@
       <option name="project" value="LOCAL" />
       <updated>1715450176847</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="New schema: Giudice(interface) -&gt; GiudiceN, GiudiceTimed">
+      <option name="closed" value="true" />
+      <created>1715508574007</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1715508574007</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="First version of Time Server" />
     <MESSAGE value="Added TimeServerMod (not fully functional)" />
     <MESSAGE value="Added ese3 package" />
     <MESSAGE value="Moved datagram into ese3 package" />
@@ -558,7 +570,8 @@
     <MESSAGE value="Added ese9.appalto" />
     <MESSAGE value="Made Offerta and Richiesta outer classes" />
     <MESSAGE value="Added GiudiceTimed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added GiudiceTimed" />
+    <MESSAGE value="New schema: Giudice(interface) -&gt; GiudiceN, GiudiceTimed" />
+    <option name="LAST_COMMIT_MESSAGE" value="New schema: Giudice(interface) -&gt; GiudiceN, GiudiceTimed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -569,5 +582,9 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

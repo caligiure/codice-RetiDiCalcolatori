@@ -15,7 +15,7 @@ public class Ente {
     public Ente (Richiesta req) {
         try {
             printMsg("Waiting for connection...");
-            Socket socket = new Socket(InetAddress.getByName(Giudice.SERVER_ADDR), Giudice.REM_PORT);
+            Socket socket = new Socket(InetAddress.getByName(Giudice.SERVER_ADDR), Giudice.ENTE_PORT);
             printMsg("Connected to Giudice: "+socket.getInetAddress()+":"+socket.getPort());
             ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
             out.writeObject(req);
