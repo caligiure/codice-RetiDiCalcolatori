@@ -1,26 +1,42 @@
 package ese9.appalto;
 
 import java.net.Socket;
+import java.util.Calendar;
 
 public class Gara {
-    private final int ID;
-    private final Richiesta req;
+    private final Richiesta richiesta;
     private final Socket ente;
-    private boolean open;
+    private boolean started;
     private Offerta winner;
+    private Calendar endTime;
 
-    public Gara(int ID, Richiesta req, Socket ente) {
-        this.ID = ID;
-        this.req = req;
+    public Gara(int garaID, Richiesta req, Socket ente) {
+        richiesta = new Richiesta(req.description, req.maxPrice, req.getDuration(), garaID);
         this.ente = ente;
-        open = false;
-        winner = null;
+        started = false;
     }
 
-    public int getID() { return ID; }
+    public Richiesta getRichiesta() { return richiesta; }
 
-    public Richiesta getRichiesta() { return req; }
+    public boolean startGara() {
+        if (started) return false;
+        started = true;
+        Calendar startTime = Calendar.getInstance();
+        startTime.add(Calendar.MINUTE, richiesta.getDuration());
+        endTime = startTime;
+        return true;
+    }
 
-    public Socket getEnte() { return ente; }
+    public boolean isOpen() { return started && Calendar.getInstance().before(endTime); }
+
+    public boolean isTerminated() { return started && Calendar.getInstance().after(endTime); }
+
+    public String toString() { return richiesta.toString(); }
+
+    public void makeOffer(Offerta off) {
+        if(!isOpen()) return;
+        if(winner == null) winner=off;
+        else if(off.price < winner.price) winner=off;
+    }
 
 }

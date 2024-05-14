@@ -45,7 +45,6 @@ public class GiudiceTimed implements Giudice {
     }
 
     private List<Offerta> getOfferte() {
-        Socket socket = null;
         List<Offerta> offerte = new LinkedList<>();
         try {
             ServerSocket ss = new ServerSocket(PARTICIPANT_PORT);
@@ -55,7 +54,7 @@ public class GiudiceTimed implements Giudice {
             endTime.add(Calendar.MINUTE, 1);
             printMsg("Accepting offers (Time left: 1 minute)");
             while(moreTime) {
-                socket = ss.accept();
+                Socket socket = ss.accept();
                 ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
                 Offerta of = (Offerta) in.readObject();
                 offerte.add(of);
@@ -69,13 +68,6 @@ public class GiudiceTimed implements Giudice {
             printMsg("Offers closed");
             return offerte;
         } catch (IOException | ClassNotFoundException e) {
-            if (socket != null) {
-                try {
-                    socket.close();
-                } catch (IOException ex) {
-                    throw new RuntimeException(e);
-                }
-            }
             e.printStackTrace();
             return offerte;
         }

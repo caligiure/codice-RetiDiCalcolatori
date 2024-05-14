@@ -23,15 +23,17 @@ public class GiudiceMulti implements Giudice {
                 ServerSocket ss = new ServerSocket(ENTE_PORT);
                 while (true) {
                     Socket ente = ss.accept();
-                    new RequestGetter(ente).start();
+                    new RequestManager(ente).start();
+                    new OffersGetter().start();
+                    new WinSender().start();
                 }
             } catch ( IOException e) { e.printStackTrace(); }
         }
     }
 
-    class RequestGetter extends Thread {
+    class RequestManager extends Thread {
         private final Socket ente;
-        public RequestGetter(Socket ente) { this.ente = ente; }
+        public RequestManager(Socket ente) { this.ente = ente; }
         @Override
         public void run() {
             try {
@@ -40,30 +42,46 @@ public class GiudiceMulti implements Giudice {
                 Richiesta req = (Richiesta) in.readObject();
                 printMsg("Received request: "+req+" from Ente: "+ente.getInetAddress()+":"+ente.getPort());
                 int garaID = registroGare.addNewGara(req, ente);
-                MulticastSocket ms = new MulticastSocket();
-                byte[] buf = registroGare.getRichiesta(garaID).toString().getBytes();
-                DatagramPacket dp = new DatagramPacket(buf, buf.length, InetAddress.getByName(MULTICAST_IP), MULTICAST_PORT);
-                ms.send(dp);
-                ms.close();
-
-                new RequestSender(garaID).start();
+                sendRequest(registroGare.getRichiesta(garaID));
+                boolean started = registroGare.startGara(garaID);
+                if (started) printMsg("Gara "+registroGare.getGara(garaID)+" started");
+                else printMsg("Gara "+registroGare.getGara(garaID)+" can't be started");
             } catch (Exception e) { e.printStackTrace(); }
         }
     }
 
-    class RequestSender extends Thread {
-        private final int garaID;
-        public RequestSender(int garaID) { this.garaID = garaID; }
+    class OffersGetter extends Thread {
         @Override
         public void run() {
-            MulticastSocket ms = null;
             try {
-                ms = new MulticastSocket();
-                byte[] buf = registroGare.getRichiesta(garaID).toString().getBytes();
-                DatagramPacket dp = new DatagramPacket(buf, buf.length, InetAddress.getByName(MULTICAST_IP), MULTICAST_PORT);
-                ms.send(dp);
-                ms.close();
-            } catch (IOException e) { if (ms != null) ms.close(); e.printStackTrace(); }
+                ServerSocket ss = new ServerSocket(PARTICIPANT_PORT);
+                while (true) {
+                    Socket socket = ss.accept();
+                    ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
+                    Offerta off = (Offerta) in.readObject();
+                    printMsg("Received offer: "+off);
+                    boolean exists = registroGare.searchGara(off.getGaraID());
+                    if (!exists) printMsg("Gara "+off.getGaraID()+" not found");
+                    else if (!registroGare.isOpen(off.getGaraID())) printMsg("Gara "+off.getGaraID()+" is not open");
+                    else registroGare.makeOffer(off);
+                    socket.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    class WinSender extends Thread {
+        @Override
+        public void run() {
+            try {
+                while (true) {
+                    for(Richiesta req : registroGare) {
+
+                    }
+                }
+            }
         }
     }
 

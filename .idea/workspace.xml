@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="New schema: Giudice(interface) -&gt; GiudiceN, GiudiceTimed">
-      <change afterPath="$PROJECT_DIR$/src/ese9/appalto/Gara.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ese9/appalto/GiudiceMulti.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ese9/appalto/RegistroGare.java" afterDir="false" />
+    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="Added method sendRequest to Giudice interface">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ese9/appalto/Ente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese9/appalto/Ente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ese9/appalto/Gara.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese9/appalto/Gara.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ese9/appalto/Giudice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese9/appalto/Giudice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ese9/appalto/GiudiceN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese9/appalto/GiudiceN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ese9/appalto/GiudiceMulti.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese9/appalto/GiudiceMulti.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ese9/appalto/GiudiceTimed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese9/appalto/GiudiceTimed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ese9/appalto/Offerta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese9/appalto/Offerta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ese9/appalto/RegistroGare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese9/appalto/RegistroGare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ese9/appalto/Richiesta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ese9/appalto/Richiesta.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,7 +297,7 @@
       <workItem from="1715337181883" duration="14127000" />
       <workItem from="1715505870938" duration="3475000" />
       <workItem from="1715512114583" duration="289000" />
-      <workItem from="1715591009436" duration="8064000" />
+      <workItem from="1715591009436" duration="17464000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit">
       <option name="closed" value="true" />
@@ -539,14 +539,21 @@
       <option name="project" value="LOCAL" />
       <updated>1715508574007</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Added method sendRequest to Giudice interface">
+      <option name="closed" value="true" />
+      <created>1715611529913</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1715611529913</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added TimeServerMod (not fully functional)" />
     <MESSAGE value="Added ese3 package" />
     <MESSAGE value="Moved datagram into ese3 package" />
     <MESSAGE value="Added class ese3\testURL" />
@@ -571,7 +578,8 @@
     <MESSAGE value="Made Offerta and Richiesta outer classes" />
     <MESSAGE value="Added GiudiceTimed" />
     <MESSAGE value="New schema: Giudice(interface) -&gt; GiudiceN, GiudiceTimed" />
-    <option name="LAST_COMMIT_MESSAGE" value="New schema: Giudice(interface) -&gt; GiudiceN, GiudiceTimed" />
+    <MESSAGE value="Added method sendRequest to Giudice interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added method sendRequest to Giudice interface" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

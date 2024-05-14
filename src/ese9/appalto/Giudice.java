@@ -24,7 +24,7 @@ public interface Giudice {
             if (socket != null) {
                 socket.close();
             }
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 
