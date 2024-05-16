@@ -11,7 +11,7 @@ public class Gara {
     private Calendar endTime;
 
     public Gara(int garaID, Richiesta req, Socket ente) {
-        richiesta = new Richiesta(req.description, req.maxPrice, req.getDuration(), garaID);
+        richiesta = new Richiesta(req.description, req.maxPrice, req.getDurationMIN(), garaID);
         this.ente = ente;
         started = false;
     }
@@ -22,14 +22,12 @@ public class Gara {
         if (started) return false;
         started = true;
         Calendar startTime = Calendar.getInstance();
-        startTime.add(Calendar.MINUTE, richiesta.getDuration());
+        startTime.add(Calendar.MINUTE, richiesta.getDurationMIN());
         endTime = startTime;
         return true;
     }
 
     public boolean isOpen() { return started && Calendar.getInstance().before(endTime); }
-
-    public boolean isTerminated() { return started && Calendar.getInstance().after(endTime); }
 
     public String toString() { return richiesta.toString(); }
 
@@ -38,5 +36,9 @@ public class Gara {
         if(winner == null) winner=off;
         else if(off.price < winner.price) winner=off;
     }
+
+    public int getDurationMIN() { return richiesta.getDurationMIN(); }
+
+    public Offerta getWinner() { return winner; }
 
 }

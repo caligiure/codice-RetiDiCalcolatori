@@ -2,10 +2,8 @@ package ese9.appalto;
 
 import java.net.Socket;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.function.Consumer;
 
-public class RegistroGare implements Iterable<Richiesta> {
+public class RegistroGare {
     private final HashMap<Integer, Gara> registro;
 
     public RegistroGare() {
@@ -25,32 +23,15 @@ public class RegistroGare implements Iterable<Richiesta> {
 
     public boolean isOpen(int garaID) { return registro.get(garaID).isOpen(); }
 
-    public boolean isTerminated(int garaID) { return registro.get(garaID).isTerminated(); }
-
     public Gara getGara(int garaID) { return registro.get(garaID); }
 
     public boolean searchGara(int garaID) { return registro.get(garaID)!=null; }
 
-    public void makeOffer(Offerta off) { registro.get(off.getGaraID()).makeOffer(off); }
+    public synchronized void makeOffer(Offerta off) { registro.get(off.getGaraID()).makeOffer(off); }
 
-    @Override
-    public Iterator<Richiesta> iterator() {
-        return new Iterator<Richiesta>() {
-            private final Iterator<Gara> it = registro.values().iterator();
+    public int getDurationMIN(int garaID) { return registro.get(garaID).getDurationMIN(); }
 
-            @Override
-            public boolean hasNext() {
-                return it.hasNext();
-            }
-
-            @Override
-            public Richiesta next() {
-                return it.next().getRichiesta();
-            }
-        };
+    public Offerta getWinner(int garaID) {
+        return registro.get(garaID).getWinner();
     }
-
-
-    //public Socket getEnte(int garaID) { return registro.get(garaID).getEnte(); }
-
 }

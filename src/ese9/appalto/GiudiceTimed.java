@@ -2,26 +2,25 @@ package ese9.appalto;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.net.*;
 import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
 
 public class GiudiceTimed implements Giudice {
-    private Socket remote_socket;
+    private Socket ente;
 
     public GiudiceTimed() {
         printMsg("Waiting for connection...");
         Richiesta req = getRichiesta();
         printMsg("Richiesta: " + req.toString());
-        sendRequest(req);
+        sendRequestMulticast(req);
         printMsg("Request sent to Participants");
         printMsg("Waiting for Participants offers...");
         List<Offerta> offerte = getOfferte();
         Offerta winner = selectWinner(offerte);
         printMsg("Winner: " + winner.toString());
-        sendWinner(winner);
+        sendWinner(winner, ente);
         printMsg("Result sent to Ente and Participants");
     }
 
@@ -32,9 +31,9 @@ public class GiudiceTimed implements Giudice {
     private Richiesta getRichiesta() {
         try {
             ServerSocket ss = new ServerSocket(ENTE_PORT);
-            remote_socket = ss.accept();
-            printMsg("Connected to Ente: " + remote_socket.getInetAddress()+":"+remote_socket.getPort());
-            ObjectInputStream in = new ObjectInputStream(remote_socket.getInputStream());
+            ente = ss.accept();
+            printMsg("Connected to Ente: " + ente.getInetAddress()+":"+ ente.getPort());
+            ObjectInputStream in = new ObjectInputStream(ente.getInputStream());
             Richiesta req = (Richiesta) in.readObject();
             ss.close();
             return req;
@@ -84,26 +83,6 @@ public class GiudiceTimed implements Giudice {
             }
         }
         return winner;
-    }
-
-    private void sendWinner(Offerta winner) {
-        MulticastSocket socket = null;
-        try {
-            ObjectOutputStream out = new ObjectOutputStream(remote_socket.getOutputStream());
-            out.writeObject(winner);
-            out.close();
-            remote_socket.close();
-            socket = new MulticastSocket();
-            byte[] buf = winner.toString().getBytes();
-            DatagramPacket dp = new DatagramPacket(buf, buf.length, InetAddress.getByName(MULTICAST_IP), MULTICAST_PORT);
-            socket.send(dp);
-            socket.close();
-        } catch (IOException e) {
-            if (socket != null) {
-                socket.close();
-            }
-            throw new RuntimeException(e);
-        }
     }
 
 }

@@ -18,8 +18,8 @@ public class Offerta implements Serializable {
     }
 
     public String toString() {
-        if(garaID==0) return "Partecipante " + partID + " - " + price;
-        else return "Partecipante " + partID + " - " + price + " - gara "+garaID;
+        if(garaID==0) return partID + " - " + price;
+        else return partID + " - " + price + " - " + garaID;
     }
 
     public int getGaraID() { return garaID; }

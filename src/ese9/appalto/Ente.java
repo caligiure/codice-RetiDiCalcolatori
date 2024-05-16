@@ -21,8 +21,13 @@ public class Ente {
             out.writeObject(req);
             printMsg("Request sent to Giudice");
             ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
-            Offerta winner = (Offerta) in.readObject();
-            System.out.println("Winner: "+winner);
+            Object obj = in.readObject();
+            if (obj instanceof Offerta) {
+                Offerta winner = (Offerta) obj;
+                System.out.println("Winner: "+winner);
+            } else if (obj instanceof String error) {
+                printMsg("Error: "+error);
+            }
             socket.close();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -30,6 +35,8 @@ public class Ente {
     }
 
     public static void main(String[] args) {
-        new Ente(new Richiesta("Rotonda", 1000));
+        new Ente(new Richiesta("Rotonda", 1000, 1));
+        new Ente(new Richiesta("Ponte", 50000, 1));
     }
+
 }
