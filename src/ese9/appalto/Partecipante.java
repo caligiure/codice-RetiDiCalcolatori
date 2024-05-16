@@ -9,21 +9,20 @@ import java.util.StringTokenizer;
 public class Partecipante extends Thread {
     private MulticastSocket ms;
     private final int price;
-    private final int searchGaraID;
+    private final String requestDescription;
 
-    public Partecipante(int price, int searchGaraID) {
+    public Partecipante(int price, String requestDescription) {
         this.price = price;
-        this.searchGaraID = searchGaraID;
+        this.requestDescription = requestDescription;
     }
 
     private void printMsg(String msg){
-        System.out.println(Thread.currentThread().threadId()+" - "+msg);
+        System.out.println("Partecipante "+Thread.currentThread().threadId()+">> "+msg);
     }
 
     public void run() {
         Socket socket = null;
         try {
-            printMsg("Waiting for connection...");
             ms = new MulticastSocket(Giudice.MULTICAST_PORT);
             ms.joinGroup(InetAddress.getByName(Giudice.MULTICAST_IP));
             Richiesta richiestaRicevuta = searchRichiesta();
@@ -39,20 +38,24 @@ public class Partecipante extends Thread {
             String[] tokens = response.split(" ");
             if (tokens.length >= 1) if (tokens[0].equals("Error:")) return;
             socket.close();
-            byte[] buffer = new byte[1024];
-            DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
-            ms.receive(packet);
+            printMsg("Waiting for result...");
             boolean done = false;
             while (!done) {
+                byte[] buffer = new byte[1024];
+                DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
+                ms.receive(packet);
                 String winner = new String(packet.getData()).trim();
                 String initialToken = null;
                 int partID = 0, price = 0, garaID = 0;
                 StringTokenizer st = new StringTokenizer(winner, " -", false);
                 if (st.hasMoreTokens()) initialToken = st.nextToken();
                 if (initialToken.equals("Winner>>")) {
-                    if (st.hasMoreTokens()) partID = Integer.parseInt(st.nextToken());
-                    if (st.hasMoreTokens()) price = Integer.parseInt(st.nextToken());
-                    if (st.hasMoreTokens()) garaID = Integer.parseInt(st.nextToken());
+                    if (st.hasMoreTokens())
+                        partID = Integer.parseInt(st.nextToken());
+                    if (st.hasMoreTokens())
+                        price = Integer.parseInt(st.nextToken());
+                    if (st.hasMoreTokens())
+                        garaID = Integer.parseInt(st.nextToken());
                     if (garaID == richiestaRicevuta.getGaraID()) {
                         printMsg("Winner: "+winner);
                         if (partID == Thread.currentThread().threadId()) printMsg("You have won the auction");
@@ -85,14 +88,13 @@ public class Partecipante extends Thread {
                 if (st.hasMoreTokens()) {
                     String initialToken = st.nextToken();
                     if (initialToken.equals("Request>>")) {
-                        printMsg(req);
                         String description = null;
                         int maxPrice = 0;
                         int garaID = 0;
                         if(st.hasMoreTokens()) description = st.nextToken();
                         if(st.hasMoreTokens()) maxPrice = Integer.parseInt(st.nextToken());
                         if(st.hasMoreTokens()) garaID = Integer.parseInt(st.nextToken());
-                        if(searchGaraID == garaID)
+                        if(requestDescription.equals(description))
                             return new Richiesta(description, maxPrice, 1, garaID);
                     }
                 }
@@ -104,10 +106,10 @@ public class Partecipante extends Thread {
     }
 
     public static void main(String[] args) {
-        for (int i = 0; i< GiudiceN.N; i++) {
-            Partecipante p1 = new Partecipante((int)(Math.random()*1000), 1);
+        for (int i = 0; i< 3; i++) {
+            Partecipante p1 = new Partecipante((int)(Math.random()*1000), "Rotonda");
             p1.start();
-            Partecipante p2 = new Partecipante((int)(Math.random()*50000), 2);
+            Partecipante p2 = new Partecipante((int)(Math.random()*50000), "Ponte");
             p2.start();
         }
     }

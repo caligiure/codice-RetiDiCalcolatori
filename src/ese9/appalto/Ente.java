@@ -6,13 +6,18 @@ import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 
-public class Ente {
+public class Ente extends Thread {
+    Richiesta req;
 
     private void printMsg(String msg){
-        System.out.println(msg);
+        System.out.println("Ente "+Thread.currentThread().threadId()+">> "+msg);
     }
 
     public Ente (Richiesta req) {
+        this.req = req;
+    }
+
+    public void run () {
         try {
             printMsg("Waiting for connection...");
             Socket socket = new Socket(InetAddress.getByName(Giudice.SERVER_ADDR), Giudice.ENTE_PORT);
@@ -35,8 +40,8 @@ public class Ente {
     }
 
     public static void main(String[] args) {
-        new Ente(new Richiesta("Rotonda", 1000, 1));
-        new Ente(new Richiesta("Ponte", 50000, 1));
+        new Ente(new Richiesta("Rotonda", 1000, 1)).start();
+        new Ente(new Richiesta("Ponte", 50000, 1)).start();
     }
 
 }

@@ -43,7 +43,6 @@ public class GiudiceMulti implements Giudice {
         @Override
         public void run() {
             try {
-                printMsg("Connected to Ente: " + ente.getInetAddress()+":"+ente.getPort());
                 ObjectOutputStream out = new ObjectOutputStream(ente.getOutputStream());
                 ObjectInputStream in = new ObjectInputStream(ente.getInputStream());
                 Richiesta req = (Richiesta) in.readObject();
@@ -51,14 +50,14 @@ public class GiudiceMulti implements Giudice {
                 int garaID = registroGare.addNewGara(req, ente);
                 boolean started = registroGare.startGara(garaID);
                 if (!started) {
-                    String error = "Gara < "+registroGare.getGara(garaID)+" > can't be started";
+                    String error = "Gara '"+registroGare.getGara(garaID)+"' can't be started";
                     out.writeObject(error);
                     printMsg(error);
                     ente.close();
                     return;
                 }
                 sendRequestMulticast(registroGare.getRichiesta(garaID));
-                printMsg("Gara < "+registroGare.getGara(garaID)+" > started");
+                printMsg("Gara '"+registroGare.getGara(garaID)+"' started");
                 int duration = registroGare.getDurationMIN(garaID);
                 if (duration > 0) TimeUnit.MINUTES.sleep(duration);
                 printMsg("Gara "+registroGare.getGara(garaID)+" ended");
