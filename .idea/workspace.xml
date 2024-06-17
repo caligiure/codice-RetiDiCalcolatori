@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="GiudiceMulti works with Partecipante and Ente">
-      <change afterPath="$PROJECT_DIR$/src/ese9/gestioneCorsiWS/GestioneCorsi.java" afterDir="false" />
+    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="Esercizio Web Service GestioneCorsi">
+      <change afterPath="$PROJECT_DIR$/src/ese10/intermediarioDiVendita/Cliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ese10/intermediarioDiVendita/Intermediario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ese10/intermediarioDiVendita/Venditore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tr2024_03_14/20240314_Traccia_RETI-parte1.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tr2024_03_14/20240314_Traccia_RETI-parte2.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tr2024_03_14/BookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tr2024_03_14/domande(incompleto)" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +56,9 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2eEkL7KBC8oMVRHfkLZWYG75Cpm" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -88,7 +96,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Uni/RetiDiCalcolatori/codice-RetiDiCalcolatori&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Uni/RetiDiCalcolatori/codice-RetiDiCalcolatori/src/traccia20240314&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -103,6 +111,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Uni\RetiDiCalcolatori\codice-RetiDiCalcolatori\src\traccia20240314" />
       <recent name="C:\Uni\RetiDiCalcolatori\codice-RetiDiCalcolatori\src\ese4\scommesseCavalli" />
       <recent name="C:\Uni\RetiDiCalcolatori\codice-RetiDiCalcolatori\src\ese4\scommesseCavalli_obj" />
       <recent name="C:\Uni\RetiDiCalcolatori\codice-RetiDiCalcolatori\src\ese3\multicast" />
@@ -295,7 +304,12 @@
       <workItem from="1715591009436" duration="20478000" />
       <workItem from="1715763842577" duration="12669000" />
       <workItem from="1715849803932" duration="4459000" />
-      <workItem from="1715855407895" duration="1067000" />
+      <workItem from="1715855407895" duration="8484000" />
+      <workItem from="1715940108392" duration="3526000" />
+      <workItem from="1715967840293" duration="860000" />
+      <workItem from="1717930664901" duration="40000" />
+      <workItem from="1718609915256" duration="3724000" />
+      <workItem from="1718635077398" duration="6619000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit">
       <option name="closed" value="true" />
@@ -569,14 +583,21 @@
       <option name="project" value="LOCAL" />
       <updated>1715855350820</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Esercizio Web Service GestioneCorsi">
+      <option name="closed" value="true" />
+      <created>1715856514581</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1715856514581</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added class ese3\URLConnectionTest" />
     <MESSAGE value="Added package ese3.multicast" />
     <MESSAGE value="Added class betClient in package scommesseCavalli" />
     <MESSAGE value="Modified BetClient" />
@@ -601,7 +622,8 @@
     <MESSAGE value="GiudiceMulti is iterable" />
     <MESSAGE value="V2" />
     <MESSAGE value="GiudiceMulti works with Partecipante and Ente" />
-    <option name="LAST_COMMIT_MESSAGE" value="GiudiceMulti works with Partecipante and Ente" />
+    <MESSAGE value="Esercizio Web Service GestioneCorsi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Esercizio Web Service GestioneCorsi" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

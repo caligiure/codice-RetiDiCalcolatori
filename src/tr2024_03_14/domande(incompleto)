@@ -1,0 +1,16 @@
+Domanda 1 - Fino a 5 punti
+Nella trasmissione dei pacchetti, descrivere (anche tramite diagrammi opportunamente commentati) le principali
+cause che possono portare a errori o ritardi nella trasmissione dei pacchetti.
+
+Durante la loro trasmissione i pacchetti devono attraversare diversi router.
+Quando un router riceve un pacchetto deve analizzarlo e reindirizzarlo correttamente e ciò impiega del tempo.
+Se sopraggiungono altri pacchetti mentre il router è ancora occupato, questi ultimi vengono memorizzati
+nel buffer in attesa di essere gestiti.
+Il tempo di reindirizzamento dei pacchetti può causare ritardi, così come il tempo di
+trasmissione al nodo successivo.
+Se il buffer del router è pieno, i nuovi pacchetti in arrivo non possono essere memorizzati e questo può
+portare ad errori nella trasmissione dei dati.
+
+Domanda 2 - Fino a 5 punti
+Si descriva, anche mediante figure opportunamente commentate, il funzionamento dell'interazione tra un utente e
+un server tramite i cookie nel protocollo HTTP.
