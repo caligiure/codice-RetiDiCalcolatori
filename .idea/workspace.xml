@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="Esercizio Web Service GestioneCorsi">
-      <change afterPath="$PROJECT_DIR$/src/ese10/intermediarioDiVendita/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ese10/intermediarioDiVendita/Intermediario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ese10/intermediarioDiVendita/Venditore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tr2024_03_14/20240314_Traccia_RETI-parte1.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tr2024_03_14/20240314_Traccia_RETI-parte2.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tr2024_03_14/BookService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tr2024_03_14/domande(incompleto)" afterDir="false" />
+    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="traccia 2024 03 14">
+      <change afterPath="$PROJECT_DIR$/src/tr2024_03_14/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tr2024_03_14/StatoSensore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,6 +75,7 @@
     &quot;Application.MulticastTimeClient.executor&quot;: &quot;Run&quot;,
     &quot;Application.MulticastTimeServer.executor&quot;: &quot;Run&quot;,
     &quot;Application.Partecipante.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Server.executor&quot;: &quot;Run&quot;,
     &quot;Application.TimeClient.executor&quot;: &quot;Run&quot;,
     &quot;Application.TimeClientMod.executor&quot;: &quot;Run&quot;,
     &quot;Application.TimeServer.executor&quot;: &quot;Run&quot;,
@@ -125,26 +122,13 @@
       <recent name="ese9.appalto" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Ente">
+  <component name="RunManager" selected="Application.Server">
     <configuration name="BetServer" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ese4.scommesseCavalli.BetServer" />
       <module name="codice-RetiDiCalcolatori" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ese4.scommesseCavalli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Ente" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ese9.appalto.Ente" />
-      <module name="codice-RetiDiCalcolatori" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ese9.appalto.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -204,6 +188,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="tr2024_03_14.Server" />
+      <module name="codice-RetiDiCalcolatori" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tr2024_03_14.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TrisClient" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="tris.TrisClient" />
       <module name="codice-RetiDiCalcolatori" />
@@ -234,19 +231,19 @@
       <item itemvalue="Application.BetServer" />
       <item itemvalue="Application.TrisClient" />
       <item itemvalue="Application.TrisServer" />
+      <item itemvalue="Application.Server" />
       <item itemvalue="Application.GiudiceMulti" />
-      <item itemvalue="Application.Ente" />
       <item itemvalue="Application.GiudiceN" />
       <item itemvalue="Application.GiudiceTimed" />
       <item itemvalue="Application.Partecipante" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Server" />
         <item itemvalue="Application.Partecipante" />
         <item itemvalue="Application.GiudiceTimed" />
         <item itemvalue="Application.GiudiceN" />
         <item itemvalue="Application.GiudiceMulti" />
-        <item itemvalue="Application.Ente" />
       </list>
     </recent_temporary>
   </component>
@@ -309,7 +306,8 @@
       <workItem from="1715967840293" duration="860000" />
       <workItem from="1717930664901" duration="40000" />
       <workItem from="1718609915256" duration="3724000" />
-      <workItem from="1718635077398" duration="6619000" />
+      <workItem from="1718635077398" duration="9568000" />
+      <workItem from="1718692985500" duration="14013000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit">
       <option name="closed" value="true" />
@@ -591,14 +589,21 @@
       <option name="project" value="LOCAL" />
       <updated>1715856514581</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="traccia 2024 03 14">
+      <option name="closed" value="true" />
+      <created>1718645022799</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1718645022799</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added package ese3.multicast" />
     <MESSAGE value="Added class betClient in package scommesseCavalli" />
     <MESSAGE value="Modified BetClient" />
     <MESSAGE value="Added classes BetServer and Scommessa" />
@@ -623,7 +628,8 @@
     <MESSAGE value="V2" />
     <MESSAGE value="GiudiceMulti works with Partecipante and Ente" />
     <MESSAGE value="Esercizio Web Service GestioneCorsi" />
-    <option name="LAST_COMMIT_MESSAGE" value="Esercizio Web Service GestioneCorsi" />
+    <MESSAGE value="traccia 2024 03 14" />
+    <option name="LAST_COMMIT_MESSAGE" value="traccia 2024 03 14" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
