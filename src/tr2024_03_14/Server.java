@@ -6,10 +6,10 @@ import java.util.*;
 import java.util.concurrent.Semaphore;
 
 public class Server {
-    private final String HOSTNAME = "agricoltura.dimes.unical.it";
-    private final int TCP_PORT_StatoSensore = 3000;
-    private final int TCP_PORT_RequestNotification = 4000;
-    private final int UDP_PORT_SendNotification = 4000;
+    public static final String HOSTNAME = "agricoltura.dimes.unical.it";
+    public static final int TCP_PORT_StatoSensore = 3000;
+    public static final int TCP_PORT_RequestNotification = 4000;
+    public static final int UDP_PORT_Notification = 4000;
     private final int ORA_INIZIO = 8;
     private final int ORA_FINE = 13;
     private final List<StatoSensore> statusRilevati = new LinkedList<>();
@@ -17,18 +17,11 @@ public class Server {
     private final HashMap<InetAddress, Integer> clientRegistrati = new HashMap<>(); // <IP, ID_sensore>
     private final Semaphore mutexClientRegistrati = new Semaphore(1);
 
-    public void printinfo(String s) {
-        System.out.println(s);
+    public static void main(String[] args) {
+        new Server();
     }
 
-    public static void main(String[] args) {
-        Calendar o = Calendar.getInstance();
-        o.set(Calendar.HOUR_OF_DAY, 16);
-        o.set(Calendar.MINUTE, 0);
-        o.set(Calendar.SECOND, 0);
-        int h = o.get(Calendar.HOUR_OF_DAY);
-        System.out.println(h);
-    }
+    private void printinfo(String s) { System.out.println(s); }
 
     private boolean checkHour() {
         Calendar cal = Calendar.getInstance();
@@ -162,7 +155,7 @@ public class Server {
                 PrintWriter out = new PrintWriter(client.getOutputStream());
                 BufferedReader in = new BufferedReader(new InputStreamReader(client.getInputStream()));
                 String req = in.readLine();
-                printinfo("Ricevuta richiesta " + req); // "Richiesta registrazione servizio notifica da sensore: ID=1
+                printinfo("Ricevuta richiesta " + req); // "Notifica aggiornamenti al sensore: ID=1"
                 StringTokenizer st = new StringTokenizer(req, "=", false);
                 Integer ID_sensore = null;
                 if (st.hasMoreTokens()) {
@@ -210,7 +203,7 @@ public class Server {
                     Integer ID_sensore = clientRegistrati.get(ip);
                     if ( ID_sensore == null || ID_sensore != s.getID_sensore() ) {
                         dp.setAddress(ip);
-                        dp.setPort(UDP_PORT_SendNotification);
+                        dp.setPort(UDP_PORT_Notification);
                         ds.send(dp);
                     }
                 }

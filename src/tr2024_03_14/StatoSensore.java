@@ -6,9 +6,8 @@ public class StatoSensore {
     private final int temp;
     private final int umid;
 
-    public StatoSensore(int sensore, int id, int temp, int umid) {
-        this.ID_sensore = sensore;
-        this.NUM_stato = id;
+    public StatoSensore(int ID_sensore, int temp, int umid) {
+        this.ID_sensore = ID_sensore;
         this.temp = temp;
         this.umid = umid;
     }
