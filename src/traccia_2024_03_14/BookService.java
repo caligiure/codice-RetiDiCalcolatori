@@ -1,4 +1,4 @@
-package tr2024_03_14;
+package traccia_2024_03_14;
 
 import java.io.Serializable;
 import java.util.LinkedList;
