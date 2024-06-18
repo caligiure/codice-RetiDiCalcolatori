@@ -7,26 +7,35 @@ import java.net.MulticastSocket;
 import java.net.Socket;
 import java.util.StringTokenizer;
 
-public class Sensore {
+public class Sensore extends Thread {
+    StatoSensore s;
 
     public static void main(String[] args) {
-        new Sensore(1);
+        new Sensore(1, 25, 10).start();
+        new Sensore(2, 15, 3).start();
+        new Sensore(3, 15, 4).start();
+        new Sensore(4, 3, 0).start();
+        new Sensore(5, 30, 20).start();
     }
 
     private void printinfo(String s) { System.out.println(s); }
 
-    public Sensore(int ID_sensore) {
-        StatoSensore s = new StatoSensore(ID_sensore, 25, 10);
-        printinfo("Stato sensore: " + ID_sensore);
+    public Sensore(int ID_sensore, int temp, int umid) {
+        s = new StatoSensore(ID_sensore, temp, umid);
+    }
+
+    @Override
+    public void run() {
+        printinfo("Stato sensore: " + s.toString() );
         sendStatus(s);
-        sendRequest(ID_sensore);
+        sendRequest(s.getID_sensore());
         getNotification();
     }
 
     private void sendStatus(StatoSensore s) {
         Socket sock = null;
         try {
-            sock = new Socket(InetAddress.getByName(Server.HOSTNAME), Server.TCP_PORT_StatoSensore);
+            sock = new Socket(InetAddress.getByName("localhost"), Server.TCP_PORT_StatoSensore);
             ObjectOutputStream out = new ObjectOutputStream( sock.getOutputStream() );
             BufferedReader in = new BufferedReader( new InputStreamReader( sock.getInputStream() ) );
             out.writeObject( s );
@@ -47,19 +56,20 @@ public class Sensore {
     }
 
     private void sendRequest(int id) {
-        Socket s = null;
+        Socket sock = null;
         try {
-            s = new Socket(InetAddress.getByName(Server.HOSTNAME), Server.TCP_PORT_RequestNotification);
-            PrintWriter out = new PrintWriter( s.getOutputStream() );
-            BufferedReader in = new BufferedReader( new InputStreamReader( s.getInputStream() ) );
+            sock = new Socket(InetAddress.getByName("localhost"), Server.TCP_PORT_RequestNotification);
+            PrintWriter out = new PrintWriter( sock.getOutputStream(), true);
+            BufferedReader in = new BufferedReader( new InputStreamReader( sock.getInputStream() ) );
             out.println("Notifica aggiornamenti al sensore: ID="+id);
+            printinfo("Sensore "+id+" ha chiesto aggiornamenti");
             String resp = in.readLine();
             printinfo(resp);
-            s.close();
+            sock.close();
         } catch ( IOException e ) {
-            if ( s!=null ){
+            if ( sock!=null ){
                 try {
-                    s.close();
+                    sock.close();
                 } catch ( IOException e1 ) {
                     e1.printStackTrace();
                 }
@@ -76,7 +86,7 @@ public class Sensore {
                 byte[] buf = new byte[256];
                 DatagramPacket dp = new DatagramPacket(buf, buf.length);
                 ms.receive(dp);
-                String msg = new String( dp.getData() );
+                String msg = new String( dp.getData() ).trim();
                 String[] arr = msg.split("#");
                 if (arr.length == 4)
                     printinfo("Received notification status: ID_sensore=" + arr[0] +

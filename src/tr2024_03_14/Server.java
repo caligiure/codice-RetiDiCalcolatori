@@ -10,8 +10,8 @@ public class Server {
     public static final int TCP_PORT_StatoSensore = 3000;
     public static final int TCP_PORT_RequestNotification = 4000;
     public static final int UDP_PORT_Notification = 4000;
-    private final int ORA_INIZIO = 8;
-    private final int ORA_FINE = 13;
+    private final int ORA_INIZIO = 16;
+    private final int ORA_FINE = 19;
     private final List<StatoSensore> statusRilevati = new LinkedList<>();
     private final Semaphore mutexStatusRilevati = new Semaphore(1);
     private final HashMap<InetAddress, Integer> clientRegistrati = new HashMap<>(); // <IP, ID_sensore>
@@ -96,20 +96,20 @@ public class Server {
                 PrintWriter out = new PrintWriter(client.getOutputStream(), true);
                 ObjectInputStream in = new ObjectInputStream(client.getInputStream());
                 StatoSensore s = (StatoSensore) in.readObject();
-                printinfo("Ricevuta richiesta: " + s);
+                printinfo("Ricevuto: " + s.toString() );
                 if (!checkHour()) {
                     out.println("Richiesta rifiutata: richiesta fuori dall'orario consentito");
-                    printinfo("Rifiutata richiesta fuori dall'orario consentito");
+                    printinfo("Rifiutata richiesta di stato fuori dall'orario consentito");
                 } else if (checkUmid(s) && checkTemp(s)) {
                     out.println("Richiesta rifiutata: valori già registrati");
-                    printinfo("Rifiutata richiesta con valori già registrati");
+                    printinfo("Rifiutata richiesta di stato con valori già registrati");
                 } else {
                     mutexStatusRilevati.acquire();
                     s.setNUM_stato(statusRilevati.size() + 1);
                     statusRilevati.add(s);
                     mutexStatusRilevati.release();
                     out.println("Richiesta accettata: ID=" + s.getNUM_stato());
-                    printinfo("Registrata richiesta con ID=" + s.getNUM_stato());
+                    printinfo("Registrata richiesta di stato da sensore ID=" + s.getNUM_stato());
                     new NotificationSender(s).start();
                 }
                 client.close();
@@ -152,10 +152,10 @@ public class Server {
         public NotificationRequestHandler(Socket client) { this.client = client; }
         public void run() {
             try {
-                PrintWriter out = new PrintWriter(client.getOutputStream());
+                PrintWriter out = new PrintWriter(client.getOutputStream(), true);
                 BufferedReader in = new BufferedReader(new InputStreamReader(client.getInputStream()));
                 String req = in.readLine();
-                printinfo("Ricevuta richiesta " + req); // "Notifica aggiornamenti al sensore: ID=1"
+                printinfo("Ricevuta richiesta: " + req); // "Notifica aggiornamenti al sensore: ID=1"
                 StringTokenizer st = new StringTokenizer(req, "=", false);
                 Integer ID_sensore = null;
                 if (st.hasMoreTokens()) {
@@ -207,7 +207,7 @@ public class Server {
                         ds.send(dp);
                     }
                 }
-                printinfo("Notifica per aggiornamento da sensore "+s.getID_sensore()+" inviata");
+                printinfo("Notifiche per aggiornamento da sensore "+s.getID_sensore()+" inviata");
                 ds.close();
             } catch (IOException e) {
                 printinfo("Errore nell'invio delle notifiche");

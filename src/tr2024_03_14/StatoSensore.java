@@ -1,6 +1,8 @@
 package tr2024_03_14;
 
-public class StatoSensore {
+import java.io.Serializable;
+
+public class StatoSensore implements Serializable {
     private final int ID_sensore;
     private int NUM_stato;
     private final int temp;
@@ -29,5 +31,15 @@ public class StatoSensore {
     }
 
     public void setNUM_stato(int NUM_stato) { this.NUM_stato = NUM_stato; }
+
+    @Override
+    public String toString() {
+        return "StatoSensore{" +
+                "ID_sensore=" + ID_sensore +
+                ", NUM_stato=" + NUM_stato +
+                ", temp=" + temp +
+                ", umid=" + umid +
+                '}';
+    }
 
 }
