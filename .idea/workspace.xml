@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="traccia 2024 03 14">
-      <change afterPath="$PROJECT_DIR$/src/traccia_2023_07_11/20230711_Traccia_RETI-parte1.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/traccia_2023_07_11/20230711_Traccia_RETI-parte2.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/traccia_2023_07_11/Offerta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/traccia_2023_07_11/Server.java" afterDir="false" />
+    <list default="true" id="abdbc302-17db-45cb-817a-68d155a21ad8" name="Changes" comment="traccia 2023 07 11">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,54 +56,54 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.BetClient.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BetServer.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BetServerMultiRace.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BetServer_v2.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Board.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Communicator.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Ente.executor&quot;: &quot;Run&quot;,
-    &quot;Application.GameManager.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Giudice.executor&quot;: &quot;Run&quot;,
-    &quot;Application.GiudiceMulti.executor&quot;: &quot;Run&quot;,
-    &quot;Application.GiudiceTimed.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MulticastTimeClient.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MulticastTimeServer.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Partecipante.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Sensore.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Server.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TimeClient.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TimeClientMod.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TimeServer.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TimeServerMod.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TrisClient.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TrisServer.executor&quot;: &quot;Run&quot;,
-    &quot;Application.URLConnectionTest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.URLTest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ese4.horseBets.BetClient.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ese4.ludopatia.BetClient.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ese4.ludopatia.BetServer.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Uni/RetiDiCalcolatori/codice-RetiDiCalcolatori/src/traccia_2023_07_11&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.BetClient.executor": "Run",
+    "Application.BetServer.executor": "Run",
+    "Application.BetServerMultiRace.executor": "Run",
+    "Application.BetServer_v2.executor": "Run",
+    "Application.Board.executor": "Run",
+    "Application.Communicator.executor": "Run",
+    "Application.Ente.executor": "Run",
+    "Application.GameManager.executor": "Run",
+    "Application.Giudice.executor": "Run",
+    "Application.GiudiceMulti.executor": "Run",
+    "Application.GiudiceTimed.executor": "Run",
+    "Application.MulticastTimeClient.executor": "Run",
+    "Application.MulticastTimeServer.executor": "Run",
+    "Application.Partecipante.executor": "Run",
+    "Application.Sensore.executor": "Run",
+    "Application.Server.executor": "Run",
+    "Application.TimeClient.executor": "Run",
+    "Application.TimeClientMod.executor": "Run",
+    "Application.TimeServer.executor": "Run",
+    "Application.TimeServerMod.executor": "Run",
+    "Application.TrisClient.executor": "Run",
+    "Application.TrisServer.executor": "Run",
+    "Application.URLConnectionTest.executor": "Run",
+    "Application.URLTest.executor": "Run",
+    "Application.ese4.horseBets.BetClient.executor": "Run",
+    "Application.ese4.ludopatia.BetClient.executor": "Run",
+    "Application.ese4.ludopatia.BetServer.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Uni/IngDelSoftware/Materiale/progettoKENKEN/progetto",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="traccia_2023_07_11" />
@@ -314,7 +310,9 @@
       <workItem from="1718609915256" duration="3724000" />
       <workItem from="1718635077398" duration="9568000" />
       <workItem from="1718692985500" duration="32642000" />
-      <workItem from="1718785405528" duration="10790000" />
+      <workItem from="1718785405528" duration="13249000" />
+      <workItem from="1718977561806" duration="1284000" />
+      <workItem from="1722604414223" duration="47000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit">
       <option name="closed" value="true" />
@@ -636,14 +634,21 @@
       <option name="project" value="LOCAL" />
       <updated>1718730146194</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="traccia 2023 07 11">
+      <option name="closed" value="true" />
+      <created>1718813302773</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1718813302773</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added class betClient in package scommesseCavalli" />
     <MESSAGE value="Modified BetClient" />
     <MESSAGE value="Added classes BetServer and Scommessa" />
     <MESSAGE value="Added class BetServer_v2" />
@@ -668,7 +673,8 @@
     <MESSAGE value="GiudiceMulti works with Partecipante and Ente" />
     <MESSAGE value="Esercizio Web Service GestioneCorsi" />
     <MESSAGE value="traccia 2024 03 14" />
-    <option name="LAST_COMMIT_MESSAGE" value="traccia 2024 03 14" />
+    <MESSAGE value="traccia 2023 07 11" />
+    <option name="LAST_COMMIT_MESSAGE" value="traccia 2023 07 11" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
